@@ -57,8 +57,19 @@ a:hover{
   box-shadow:0 0 10px #35ffb3;
 }
 
-.clock{
+..clock{
   margin-top:20px;
   font-family:monospace;
   font-size:18px;
+}
+
+/* DIARY専用 */
+
+.diary-page{
+  font-family:'DotGothic16',sans-serif;
+}
+
+.diary-page h1,
+.diary-page h3{
+  font-family:'Silkscreen',sans-serif;
 }

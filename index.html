@@ -31,10 +31,42 @@ color:#0099cc;
 text-decoration:none;
 }
 </style>
-
+  
+<link rel="stylesheet" href="style.css">
+  
 </head>
 
-<body>
+<body><div class="window">
+
+  <div class="titlebar">
+    memory://archive
+  </div>
+
+  <h1>memory://archive</h1>
+
+  <p><span class="online"></span> ONLINE</p>
+
+  <p>Connected memories are being stored.</p>
+
+  <div class="clock" id="clock">00:00:00</div>
+
+  <br>
+
+  <a href="profile.html">PROFILE</a>
+  <a href="diary.html">DIARY</a>
+  <a href="connection.html">CONNECTION</a>
+
+</div>
+
+<script>
+function updateClock(){
+  const now = new Date();
+  const time = now.toLocaleTimeString('ja-JP');
+  document.getElementById('clock').textContent = time;
+}
+updateClock();
+setInterval(updateClock,1000);
+</script>
 
 <h1>memory://archive</h1>
 

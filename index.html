@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>memory://archive</title>
+<title>PROFILE</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -14,42 +13,17 @@
 
 <div class="window">
 
-```
-<div class="titlebar">
-    memory://archive
-</div>
+<h1>PROFILE</h1>
 
-<h1>memory://archive</h1>
-
-<p>
-    <span class="online"></span>
-    ONLINE
-</p>
-
-<p>Connected memories are being stored.</p>
-
-<div class="clock" id="clock">00:00:00</div>
+<p>Name : 404</p>
+<p>Status : ONLINE</p>
+<p>Connection : Stable</p>
 
 <br>
 
-<a href="profile.html">PROFILE</a>
-<a href="diary.html">DIARY</a>
-<a href="connection.html">CONNECTION</a>
-```
+<a href="index.html">HOME</a>
 
 </div>
 
-<script>
-function updateClock() {
-    const now = new Date();
-    const time = now.toLocaleTimeString('ja-JP');
-    document.getElementById('clock').textContent = time;
-}
-
-updateClock();
-setInterval(updateClock, 1000);
-</script>
-
 </body>
 </html>
-

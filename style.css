@@ -9,9 +9,9 @@ body{
   background-attachment:fixed;
 
   color:#006f9f;
-  text-align:center;
   font-family:'DotGothic16',sans-serif;
-
+  text-align:center;
+}
 .window{
   max-width:720px;
   margin:80px auto;

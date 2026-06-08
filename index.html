@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROFILE</title>
+<title>memory://archive</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -13,17 +13,42 @@
 
 <div class="window">
 
-<h1>PROFILE</h1>
+<div class="titlebar">
+memory://archive
+</div>
 
-<p>Name : 404</p>
-<p>Status : ONLINE</p>
-<p>Connection : Stable</p>
+<h1>memory://archive</h1>
 
-<br>
+<p>
+<span class="online"></span>
+ONLINE
+</p>
 
-<a href="index.html">HOME</a>
+<p>Connected memories are being stored.</p>
+
+<div class="clock" id="clock">00:00:00</div>
+
+<a href="profile.html">PROFILE</a>
+<a href="diary.html">DIARY</a>
+<a href="connection.html">CONNECTION</a>
 
 </div>
+
+<script>
+function updateClock(){
+const now = new Date();
+
+const h = String(now.getHours()).padStart(2,"0");
+const m = String(now.getMinutes()).padStart(2,"0");
+const s = String(now.getSeconds()).padStart(2,"0");
+
+document.getElementById("clock").textContent =
+`${h}:${m}:${s}`;
+}
+
+setInterval(updateClock,1000);
+updateClock();
+</script>
 
 </body>
 </html>

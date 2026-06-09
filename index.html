@@ -83,6 +83,9 @@
   <h3>LAST SIGNAL</h3>
 
   <p>memory.mp3</p>
+  <p>
+Status : <span id="signalStatus">Waiting...</span>
+  </p>
 
   <button onclick="playSignal()">
     ▶ RECEIVE SIGNAL
@@ -128,6 +131,18 @@ document.getElementById("days2").textContent = diff;
   function playSignal(){
   const audio =
   document.getElementById("signalAudio");
+
+  const status =
+  document.getElementById("signalStatus");
+
+  status.textContent = "Receiving...";
+
+  audio.play();
+
+  setTimeout(function(){
+    status.textContent = "Connected";
+  },3000);
+}
 
   audio.play();
 }

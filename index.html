@@ -79,12 +79,21 @@
     </div>
 
     <div class="window-box">
-      <h3>MUSIC.EXE</h3>
-      <p>Now Playing</p>
-      <p>cloud atlas</p>
-      <p>:: 404's playlist</p>
-    </div>
 
+  <h3>LAST SIGNAL</h3>
+
+  <p>memory.mp3</p>
+
+  <button onclick="playSignal()">
+    ▶ RECEIVE SIGNAL
+  </button>
+
+  <audio id="signalAudio">
+    <source src="memory_0920.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
+    
   </aside>
 
 </div>
@@ -116,6 +125,12 @@ const diff = Math.floor((today - start)/(1000*60*60*24));
 
 document.getElementById("days").textContent = diff;
 document.getElementById("days2").textContent = diff;
+  function playSignal(){
+  const audio =
+  document.getElementById("signalAudio");
+
+  audio.play();
+}
 </script>
 
 </body>

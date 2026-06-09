@@ -22,7 +22,7 @@
 
   <main class="main">
 
-
+```
 <section class="hero">
   <h1>memory://archive</h1>
 
@@ -31,25 +31,25 @@
   </div>
 
   <div class="hero-content">
-  <div class="hero-text">
-    <p>Connected memories are<br>being stored.</p>
-    <p class="receiving">Receiving... █</p>
+    <div class="hero-text">
+      <p>Connected memories are<br>being stored.</p>
+      <p class="receiving">Receiving... █</p>
+    </div>
+
+    <img src="rabbit.png" class="memory-rabbit">
   </div>
-
-  <img src="rabbit.png" class="memory-rabbit">
-</div>
-
-</div>
 
   <div class="system-row">
     <div>
       <span>SYSTEM CLOCK</span>
       <strong id="clock">00:00:00</strong>
     </div>
+
     <div>
       <span>LINK UPTIME</span>
       <strong><span id="days">0</span> DAYS</strong>
     </div>
+
     <div>
       <span>STATUS</span>
       <strong>ACTIVE</strong>
@@ -63,9 +63,9 @@
     <div class="window-title">
       <h3>LAST TRANSMISSION</h3>
       <div class="window-controls">
-        <span>_</span>
-        <span>□</span>
-        <span>×</span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
 
@@ -78,9 +78,9 @@
     <div class="window-title">
       <h3>VISITOR LOG</h3>
       <div class="window-controls">
-        <span>_</span>
-        <span>□</span>
-        <span>×</span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
 
@@ -89,18 +89,16 @@
   </div>
 
 </section>
-
+```
 
   </main>
 
   <aside class="right-panel">
 
-
+```
 <div class="window-box">
-
   <div class="window-title">
     <h3>LINK STATUS</h3>
-
     <div class="window-controls">
       <span></span>
       <span></span>
@@ -108,31 +106,28 @@
     </div>
   </div>
 
- <p>
-Established :<br>
-2022.09.20
-</p>
+  <p>
+    Established :<br>
+    2022.09.20
+  </p>
 
-<p>
-WORLD END TIMER :<br>
-<span id="endDays">0</span> DAYS
-</p>
+  <p>
+    WORLD END TIMER :<br>
+    <span id="endDays">0</span> DAYS
+  </p>
 
-<div class="separator"></div>
+  <div class="separator"></div>
 
-<p>
-404 MEMORY
-</p>
-  
+  <p>404 MEMORY</p>
 </div>
 
 <div class="window-box">
   <div class="window-title">
     <h3>LAST SIGNAL</h3>
     <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span>×</span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 
@@ -150,11 +145,12 @@ WORLD END TIMER :<br>
     <source src="memory.mp3" type="audio/mpeg">
   </audio>
 </div>
-
+```
 
   </aside>
 
 </div>
+
 <div id="errorWindow" class="secret-error">
   <div class="window-title">
     <h3>ERROR.LOG</h3>
@@ -182,7 +178,7 @@ WORLD END TIMER :<br>
   <p>Access granted.</p>
   <p>This memory was hidden from public view.</p>
 </div>
-  
+
 <div class="taskbar">
   <span>● Receiving...</span>
   <span>● Synchronizing...</span>
@@ -193,6 +189,7 @@ WORLD END TIMER :<br>
 <script>
 function updateClock(){
   const now = new Date();
+
   const h = String(now.getHours()).padStart(2,"0");
   const m = String(now.getMinutes()).padStart(2,"0");
   const s = String(now.getSeconds()).padStart(2,"0");
@@ -222,28 +219,22 @@ function playSignal(){
     status.textContent = "Connected";
   },3000);
 }
-  const worldEnd = new Date();
-worldEnd.setFullYear(worldEnd.getFullYear() + 500,000,000);
+
+const worldEnd = new Date();
+worldEnd.setFullYear(worldEnd.getFullYear() + 500);
 
 function updateWorldTimer(){
-
   const now = new Date();
+  const diff = worldEnd - now;
+  const days = Math.floor(diff / (1000*60*60*24));
 
-  const diff =
-  worldEnd - now;
-
-  const days =
-  Math.floor(diff / (1000*60*60*24));
-
-  document.getElementById("endDays")
-  .textContent = days.toLocaleString();
+  document.getElementById("endDays").textContent =
+    days.toLocaleString();
 }
 
 updateWorldTimer();
-
 setInterval(updateWorldTimer,1000);
 
-updateWorldTimer();
 function openSecret(){
   document.getElementById("errorWindow").style.display = "none";
   document.getElementById("secretWindow").style.display = "block";
@@ -252,9 +243,7 @@ function openSecret(){
 function closeSecret(){
   document.getElementById("secretWindow").style.display = "none";
 }
-</script>
 
-<script>
 fetch("diary.html")
 .then(response => response.text())
 .then(html => {

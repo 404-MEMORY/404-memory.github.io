@@ -154,3 +154,21 @@ h1{
   margin-left:auto;
   font-size:22px;
 }
+button{
+  background:#001133;
+  color:#8eeeff;
+  border:1px solid #6f8cff;
+
+  padding:8px 14px;
+
+  font-family:'DotGothic16',sans-serif;
+
+  cursor:pointer;
+
+  box-shadow:0 0 10px rgba(120,180,255,.4);
+}
+
+button:hover{
+  background:#002255;
+  box-shadow:0 0 20px rgba(120,180,255,.8);
+}

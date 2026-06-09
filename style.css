@@ -257,11 +257,11 @@ button:hover{
 .hero-content{
   display:flex;
   align-items:center;
-  gap:80px;
+  gap:70px;
 }
 
 .memory-rabbit{
-  width:220px;
+  width:200px;
   image-rendering:pixelated;
 
   animation:floatRabbit 4s ease-in-out infinite;

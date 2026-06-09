@@ -89,19 +89,35 @@
 
 
 <div class="window-box">
+
   <div class="window-title">
     <h3>LINK STATUS</h3>
+
     <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span>×</span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 
-  <p>Status : <span class="green">ONLINE</span></p>
-  <p>Established :<br>2022.09.20</p>
-  <p>Duration :<br><span id="days2">0</span> DAYS</p>
-  <p>Still here.</p>
+  <p>
+    Established :<br>
+    2022.09.20
+  </p>
+
+  <div class="separator"></div>
+
+  <p>
+    WORLD END TIMER :<br>
+    <span id="endDays">0</span> DAYS
+  </p>
+
+  <div class="separator"></div>
+
+  <p>
+    404 MEMORY
+  </p>
+
 </div>
 
 <div class="window-box">
@@ -160,7 +176,6 @@ const today = new Date();
 const diff = Math.floor((today - start)/(1000*60*60*24));
 
 document.getElementById("days").textContent = diff;
-document.getElementById("days2").textContent = diff;
 
 function playSignal(){
   const audio = document.getElementById("signalAudio");
@@ -174,6 +189,28 @@ function playSignal(){
     status.textContent = "Connected";
   },3000);
 }
+  const worldEnd = new Date();
+worldEnd.setFullYear(worldEnd.getFullYear() + 500);
+
+function updateWorldTimer(){
+
+  const now = new Date();
+
+  const diff =
+  worldEnd - now;
+
+  const days =
+  Math.floor(diff / (1000*60*60*24));
+
+  document.getElementById("endDays")
+  .textContent = days.toLocaleString();
+}
+
+updateWorldTimer();
+
+setInterval(updateWorldTimer,1000);
+
+updateWorldTimer();
 </script>
 
 <script>

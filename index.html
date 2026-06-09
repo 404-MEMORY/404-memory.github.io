@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -21,80 +22,114 @@
 
   <main class="main">
 
-    <section class="hero">
-      <h1>memory://archive</h1>
+```
+<section class="hero">
+  <h1>memory://archive</h1>
 
-      <div class="status-line">
-        STATUS : <span class="online"></span> ONLINE
+  <div class="status-line">
+    STATUS : <span class="online"></span> ONLINE
+  </div>
+
+  <p>Connected memories are<br>being stored.</p>
+  <p class="receiving">Receiving... █</p>
+
+  <div class="system-row">
+    <div>
+      <span>SYSTEM CLOCK</span>
+      <strong id="clock">00:00:00</strong>
+    </div>
+    <div>
+      <span>LINK UPTIME</span>
+      <strong><span id="days">0</span> DAYS</strong>
+    </div>
+    <div>
+      <span>STATUS</span>
+      <strong>ACTIVE</strong>
+    </div>
+  </div>
+</section>
+
+<section class="bottom-row">
+
+  <div class="window-box large">
+    <div class="window-title">
+      <h3>LAST TRANSMISSION</h3>
+      <div class="window-controls">
+        <span>_</span>
+        <span>□</span>
+        <span>×</span>
       </div>
+    </div>
 
-      <p>Connected memories are<br>being stored.</p>
-      <p class="receiving">Receiving... █</p>
+    <div id="lastTransmission">
+      Loading latest diary...
+    </div>
+  </div>
 
-      <div class="system-row">
-        <div>
-          <span>SYSTEM CLOCK</span>
-          <strong id="clock">00:00:00</strong>
-        </div>
-        <div>
-          <span>LINK UPTIME</span>
-          <strong><span id="days">0</span> DAYS</strong>
-        </div>
-        <div>
-          <span>STATUS</span>
-          <strong>ACTIVE</strong>
-        </div>
+  <div class="window-box visitor">
+    <div class="window-title">
+      <h3>VISITOR LOG</h3>
+      <div class="window-controls">
+        <span>_</span>
+        <span>□</span>
+        <span>×</span>
       </div>
-    </section>
+    </div>
 
-    <section class="bottom-row">
-      <div class="window-box large">
-       <h3>LAST TRANSMISSION</h3>
+    <p class="count">00000001</p>
+    <p>Last signal still received.</p>
+  </div>
 
-<div id="lastTransmission">
-  Loading latest diary...
-</div>
-
-</div>
-
-      <div class="window-box visitor">
-        <h3>VISITOR LOG</h3>
-        <p class="count">00000001</p>
-        <p>Last signal still received.</p>
-      </div>
-    </section>
+</section>
+```
 
   </main>
 
   <aside class="right-panel">
 
-    <div class="window-box">
-      <h3>LINK STATUS</h3>
-      <p>Status : <span class="green">ONLINE</span></p>
-      <p>Established :<br>2022.09.20</p>
-      <p>Duration :<br><span id="days2">0</span> DAYS</p>
-      <p>Still here.</p>
+```
+<div class="window-box">
+  <div class="window-title">
+    <h3>LINK STATUS</h3>
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span>×</span>
     </div>
+  </div>
 
-    <div class="window-box">
+  <p>Status : <span class="green">ONLINE</span></p>
+  <p>Established :<br>2022.09.20</p>
+  <p>Duration :<br><span id="days2">0</span> DAYS</p>
+  <p>Still here.</p>
+</div>
 
-  <h3>LAST SIGNAL</h3>
+<div class="window-box">
+  <div class="window-title">
+    <h3>LAST SIGNAL</h3>
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span>×</span>
+    </div>
+  </div>
 
   <p>memory.mp3</p>
+
   <p>
-Status : <span id="signalStatus">Waiting...</span>
+    Status : <span id="signalStatus">Waiting...</span>
   </p>
 
   <button onclick="playSignal()">
     ▶ RECEIVE SIGNAL
   </button>
 
-<audio id="signalAudio">
-  <source src="memory.mp3" type="audio/mpeg">
-</audio>
-
+  <audio id="signalAudio">
+    <source src="memory.mp3" type="audio/mpeg">
+  </audio>
 </div>
-    
+```
+
   </aside>
 
 </div>
@@ -126,12 +161,10 @@ const diff = Math.floor((today - start)/(1000*60*60*24));
 
 document.getElementById("days").textContent = diff;
 document.getElementById("days2").textContent = diff;
- function playSignal(){
-  const audio =
-  document.getElementById("signalAudio");
 
-  const status =
-  document.getElementById("signalStatus");
+function playSignal(){
+  const audio = document.getElementById("signalAudio");
+  const status = document.getElementById("signalStatus");
 
   status.textContent = "Receiving...";
 
@@ -141,10 +174,9 @@ document.getElementById("days2").textContent = diff;
     status.textContent = "Connected";
   },3000);
 }
-  
 </script>
 
-  <script>
+<script>
 fetch("diary/latest.html")
 .then(response => response.text())
 .then(html => {

@@ -172,3 +172,7 @@ button:hover{
   background:#002255;
   box-shadow:0 0 20px rgba(120,180,255,.8);
 }
+.separator{
+  border-top:1px dashed #6f8cff;
+  margin:12px 0;
+}

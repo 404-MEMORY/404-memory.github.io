@@ -1,79 +1,16 @@
 body{
   margin:0;
   min-height:100vh;
-
   background-image:url("bg2.png");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
   background-attachment:fixed;
-
-  color:#006f9f;
+  color:#8feaff;
   font-family:'DotGothic16',sans-serif;
   text-align:center;
 }
-.window{
-  max-width:720px;
-  margin:80px auto;
-  padding:30px;
-  border:2px solid rgba(255,255,255,.8);
-  border-radius:18px;
-  background:rgba(255,255,255,.45);
-  box-shadow:0 0 25px rgba(0,170,255,.35);
-  backdrop-filter:blur(10px);
-}
 
-.titlebar{
-  background:linear-gradient(90deg,#009dff,#8eeeff);
-  color:white;
-  padding:10px;
-  border-radius:12px;
-  font-weight:bold;
-  letter-spacing:3px;
-}
-
-h1{
-  letter-spacing:5px;
-  text-shadow:0 0 8px #7eeaff;
-}
-
-a{
-  display:block;
-  margin:18px;
-  color:#008ed0;
-  text-decoration:none;
-  font-size:20px;
-}
-
-a:hover{
-  text-shadow:0 0 10px #00cfff;
-}
-
-.online{
-  display:inline-block;
-  width:10px;
-  height:10px;
-  background:#35ffb3;
-  border-radius:50%;
-  box-shadow:0 0 10px #35ffb3;
-}
-
-.clock{
-  margin-top:20px;
-  font-family:monospace;
-  font-size:18px;
-}
-
-/* DIARY専用 */
-
-.diary-page{
-  font-family:'DotGothic16',sans-serif;
-}
-
-.diary-page h1,
-.diary-page h3{
-  font-family:'Silkscreen',sans-serif;
-}
 .window{
   display:flex;
   gap:30px;
@@ -91,6 +28,14 @@ a:hover{
   width:180px;
 }
 
+.sidebar a{
+  display:block;
+  margin:18px;
+  color:#8feaff;
+  text-decoration:none;
+  font-size:18px;
+}
+
 .main-panel{
   flex:1;
 }
@@ -99,14 +44,35 @@ a:hover{
   width:280px;
 }
 
-.box{
-  margin-bottom:20px;
-  padding:15px;
-  border:1px solid rgba(120,180,255,.5);
-  background:rgba(0,0,40,.4);
-  backdrop-filter:blur(8px);
-  border-radius:12px;
+.titlebar{
+  background:linear-gradient(90deg,#009dff,#8eeeff);
+  color:white;
+  padding:10px;
+  border-radius:6px;
+  font-weight:bold;
+  letter-spacing:3px;
 }
+
+h1{
+  letter-spacing:5px;
+  text-shadow:0 0 8px #7eeaff;
+}
+
+.online{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background:#35ffb3;
+  border-radius:50%;
+  box-shadow:0 0 10px #35ffb3;
+}
+
+.clock{
+  margin-top:20px;
+  font-family:monospace;
+  font-size:18px;
+}
+
 .box{
   margin-bottom:20px;
   padding:0;
@@ -130,4 +96,13 @@ a:hover{
 .box p{
   padding:0 14px;
   text-align:left;
+}
+
+.diary-page{
+  font-family:'DotGothic16',sans-serif;
+}
+
+.diary-page h1,
+.diary-page h3{
+  font-family:'Silkscreen',sans-serif;
 }

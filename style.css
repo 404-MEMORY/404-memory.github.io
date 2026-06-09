@@ -251,7 +251,7 @@ button:hover{
 .hero-content{
   display:flex;
   align-items:center;
-  gap:40px;
+  gap:80px;
 }
 
 .memory-rabbit{

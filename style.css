@@ -254,23 +254,18 @@ button:hover{
   gap:80px;
 }
 
+.hero-content{
+  display:flex;
+  align-items:center;
+  gap:80px;
+}
+
 .memory-rabbit{
   width:220px;
   image-rendering:pixelated;
 
   animation:floatRabbit 4s ease-in-out infinite;
-}
 
-@keyframes floatRabbit{
-  0%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-10px);
-  }
-
-  100%{
-    transform:translateY(0px);
-  }
+  position:relative;
+  left:100px;
 }

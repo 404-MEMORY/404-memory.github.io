@@ -248,11 +248,6 @@ button:hover{
 
 }
 
-.hero-content{
-  display:flex;
-  align-items:center;
-  gap:80px;
-}
 
 .hero-content{
   display:flex;
@@ -267,7 +262,7 @@ button:hover{
   animation:floatRabbit 4s ease-in-out infinite;
 
   position:relative;
-  left:100px;
+  left:120px;
 }
 
 @keyframes floatRabbit{

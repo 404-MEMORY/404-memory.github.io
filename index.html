@@ -147,7 +147,34 @@ WORLD END TIMER :<br>
   </aside>
 
 </div>
+<div id="errorWindow" class="secret-error">
+  <div class="window-title">
+    <h3>ERROR.LOG</h3>
+    <div class="window-controls">
+      <span></span>
+      <span></span>
+      <span onclick="openSecret()">×</span>
+    </div>
+  </div>
 
+  <p>ERROR : hidden file detected.</p>
+  <p>Click × to close.</p>
+</div>
+
+<div id="secretWindow" class="secret-window">
+  <div class="window-title">
+    <h3>SECRET.LOG</h3>
+    <div class="window-controls">
+      <span></span>
+      <span></span>
+      <span onclick="closeSecret()">×</span>
+    </div>
+  </div>
+
+  <p>Access granted.</p>
+  <p>This memory was hidden from public view.</p>
+</div>
+  
 <div class="taskbar">
   <span>● Receiving...</span>
   <span>● Synchronizing...</span>

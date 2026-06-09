@@ -252,11 +252,11 @@ button:hover{
 .hero-content{
   display:flex;
   align-items:center;
-  gap:70px;
+  gap:80px;
 }
 
 .memory-rabbit{
-  width:200px;
+  width:220px;
   image-rendering:pixelated;
 
   animation:floatRabbit 4s ease-in-out infinite;
@@ -277,4 +277,21 @@ button:hover{
   100%{
     transform:translateY(0px);
   }
+}
+
+@media screen and (max-width: 600px){
+
+  .hero-content{
+    gap:20px;
+  }
+
+  .memory-rabbit{
+    width:120px;
+    left:0;
+  }
+
+  .right-panel{
+    width:220px;
+  }
+
 }

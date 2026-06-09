@@ -236,6 +236,14 @@ updateWorldTimer();
 setInterval(updateWorldTimer,1000);
 
 updateWorldTimer();
+function openSecret(){
+  document.getElementById("errorWindow").style.display = "none";
+  document.getElementById("secretWindow").style.display = "block";
+}
+
+function closeSecret(){
+  document.getElementById("secretWindow").style.display = "none";
+}
 </script>
 
 <script>

@@ -1,94 +1,110 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
 <title>memory://archive</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<div class="window">
+<div class="desktop">
 
-<div class="sidebar">
+  <div class="sidebar">
+    <a href="profile.html">♡<br>PROFILE</a>
+    <a href="diary.html">▣<br>DIARY</a>
+    <a href="connection.html">⌁<br>CONNECTION</a>
+    <a href="secret.html">☆<br>ARCHIVE</a>
+  </div>
 
-<a href="profile.html">PROFILE</a> <a href="diary.html">DIARY</a> <a href="connection.html">CONNECTION</a> <a href="secret.html">ARCHIVE</a>
+  <main class="main">
+
+    <section class="hero">
+      <h1>memory://archive</h1>
+
+      <div class="status-line">
+        STATUS : <span class="online"></span> ONLINE
+      </div>
+
+      <p>Connected memories are<br>being stored.</p>
+      <p class="receiving">Receiving... █</p>
+
+      <div class="system-row">
+        <div>
+          <span>SYSTEM CLOCK</span>
+          <strong id="clock">00:00:00</strong>
+        </div>
+        <div>
+          <span>LINK UPTIME</span>
+          <strong><span id="days">0</span> DAYS</strong>
+        </div>
+        <div>
+          <span>STATUS</span>
+          <strong>ACTIVE</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-row">
+      <div class="window-box large">
+        <h3>LAST TRANSMISSION</h3>
+        <p>2026.06.09</p>
+        <p><span class="pink">Signal strength: Weak.</span></p>
+        <p>
+          まじで有り得んくらい<br>
+          時間かかった〜<br>
+          でも完成できてよかった……！
+        </p>
+      </div>
+
+      <div class="window-box visitor">
+        <h3>VISITOR LOG</h3>
+        <p class="count">00000001</p>
+        <p>Last signal still received.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <aside class="right-panel">
+
+    <div class="window-box">
+      <h3>LINK STATUS</h3>
+      <p>Status : <span class="green">ONLINE</span></p>
+      <p>Established :<br>2022.09.20</p>
+      <p>Duration :<br><span id="days2">0</span> DAYS</p>
+      <p>Still here.</p>
+    </div>
+
+    <div class="window-box">
+      <h3>MUSIC.EXE</h3>
+      <p>Now Playing</p>
+      <p>cloud atlas</p>
+      <p>:: 404's playlist</p>
+    </div>
+
+  </aside>
 
 </div>
 
-<div class="main-panel">
-
-<div class="titlebar">
-memory://archive
-</div>
-
-<h1>memory://archive</h1>
-
-<p>
-<span class="online"></span>
-ONLINE
-</p>
-
-<p>Connected memories are being stored.</p>
-
-<div class="clock" id="clock">00:00:00</div>
-
-</div>
-
-<div class="side-panel">
-
-<div class="box">
-<h3>LINK STATUS</h3>
-
-<p>
-Established :<br>
-2022.09.20
-</p>
-
-<p>
-Duration :<br>
-<span id="days">0</span> DAYS
-</p>
-
-<p>
-Still here.
-</p>
-
-</div>
-
-<div class="box">
-<h3>VISITOR LOG</h3>
-
-<p>00000001</p>
-
-<p>
-Last signal still received.
-</p>
-
-</div>
-
-</div>
-
+<div class="taskbar">
+  <span>● Receiving...</span>
+  <span>● Synchronizing...</span>
+  <span>● Waiting for response...</span>
+  <span id="task-clock">00:00</span>
 </div>
 
 <script>
-
 function updateClock(){
-const now = new Date();
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2,"0");
+  const m = String(now.getMinutes()).padStart(2,"0");
+  const s = String(now.getSeconds()).padStart(2,"0");
 
-const h = String(now.getHours()).padStart(2,"0");
-const m = String(now.getMinutes()).padStart(2,"0");
-const s = String(now.getSeconds()).padStart(2,"0");
-
-document.getElementById("clock").textContent =
-`${h}:${m}:${s}`;
+  document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+  document.getElementById("task-clock").textContent = `${h}:${m}`;
 }
 
 setInterval(updateClock,1000);
@@ -96,12 +112,10 @@ updateClock();
 
 const start = new Date("2022-09-20");
 const today = new Date();
-
-const diff =
-Math.floor((today - start)/(1000*60*60*24));
+const diff = Math.floor((today - start)/(1000*60*60*24));
 
 document.getElementById("days").textContent = diff;
-
+document.getElementById("days2").textContent = diff;
 </script>
 
 </body>

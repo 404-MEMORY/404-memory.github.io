@@ -128,7 +128,7 @@ const diff = Math.floor((today - start)/(1000*60*60*24));
 
 document.getElementById("days").textContent = diff;
 document.getElementById("days2").textContent = diff;
-  function playSignal(){
+ function playSignal(){
   const audio =
   document.getElementById("signalAudio");
 
@@ -143,7 +143,6 @@ document.getElementById("days2").textContent = diff;
     status.textContent = "Connected";
   },3000);
 }
-
   audio.play();
 }
 </script>

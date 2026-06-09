@@ -145,7 +145,7 @@ document.getElementById("days2").textContent = diff;
 </script>
 
   <script>
-fetch("diary.html")
+fetch("diary/latest.html")
 .then(response => response.text())
 .then(html => {
   const parser = new DOMParser();

@@ -256,15 +256,22 @@ button:hover{
 }
 
 .memory-rabbit{
-  width:140px;
-  height:auto;
-
+  width:220px;
   image-rendering:pixelated;
 
-  opacity:.9;
-
-  filter:
-  drop-shadow(0 0 12px rgba(180,200,255,.4));
-
   animation:floatRabbit 4s ease-in-out infinite;
+}
+
+@keyframes floatRabbit{
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
 }

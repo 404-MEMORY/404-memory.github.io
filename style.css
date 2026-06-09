@@ -176,3 +176,45 @@ button:hover{
   border-top:1px dashed #6f8cff;
   margin:12px 0;
 }
+.window-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:8px 10px;
+
+  background:linear-gradient(
+    90deg,
+    #6f8cff,
+    #9bb7ff
+  );
+}
+
+.window-title h3{
+  margin:0;
+  color:white;
+  font-size:16px;
+}
+
+.window-controls{
+  display:flex;
+  gap:4px;
+}
+
+.window-controls span{
+  width:14px;
+  height:14px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #dfe8ff;
+
+  color:white;
+
+  font-size:9px;
+  line-height:1;
+
+  background:rgba(255,255,255,.1);
+}

@@ -49,15 +49,13 @@
 
     <section class="bottom-row">
       <div class="window-box large">
-        <h3>LAST TRANSMISSION</h3>
-        <p>2026.06.09</p>
-        <p><span class="pink">Signal strength: Weak.</span></p>
-        <p>
-          まじで有り得んくらい<br>
-          時間かかった〜<br>
-          でも完成できてよかった……！
-        </p>
-      </div>
+       <h3>LAST TRANSMISSION</h3>
+
+<div id="lastTransmission">
+  Loading latest diary...
+</div>
+
+</div>
 
       <div class="window-box visitor">
         <h3>VISITOR LOG</h3>
@@ -144,6 +142,22 @@ document.getElementById("days2").textContent = diff;
   },3000);
 }
   
+</script>
+
+  <script>
+fetch("diary.html")
+.then(response => response.text())
+.then(html => {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, "text/html");
+
+  const latestEntry = doc.querySelector(".entry");
+
+  if(latestEntry){
+    document.getElementById("lastTransmission").innerHTML =
+      latestEntry.innerHTML;
+  }
+});
 </script>
 
 </body>

@@ -75,7 +75,6 @@ a:hover{
   font-family:'Silkscreen',sans-serif;
 }
 .window{
-  display:flex;
   gap:30px;
   max-width:1400px;
 }
@@ -99,4 +98,28 @@ a:hover{
   background:rgba(0,0,40,.4);
   backdrop-filter:blur(8px);
   border-radius:12px;
+}
+.box{
+  margin-bottom:20px;
+  padding:0;
+  border:2px solid #6f8cff;
+  background:rgba(0,0,40,.65);
+  border-radius:6px;
+  box-shadow:0 0 12px rgba(120,180,255,.45);
+  overflow:hidden;
+}
+
+.box h3{
+  margin:0;
+  padding:8px 10px;
+  background:linear-gradient(90deg,#6f8cff,#9bb7ff);
+  color:white;
+  font-size:16px;
+  letter-spacing:2px;
+  text-align:left;
+}
+
+.box p{
+  padding:0 14px;
+  text-align:left;
 }

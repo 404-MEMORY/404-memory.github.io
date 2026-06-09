@@ -218,3 +218,31 @@ button:hover{
 
   background:rgba(255,255,255,.1);
 }
+
+.secret-error{
+  position:fixed;
+  right:30px;
+  bottom:70px;
+  width:300px;
+  border:2px solid #6f8cff;
+  background:rgba(0,0,40,.85);
+  box-shadow:0 0 14px rgba(120,180,255,.55);
+  z-index:20;
+}
+
+.secret-window{
+  display:none;
+  position:fixed;
+  right:60px;
+  bottom:110px;
+  width:360px;
+  border:2px solid #ff9bdc;
+  background:rgba(20,0,40,.9);
+  box-shadow:0 0 18px rgba(255,150,220,.65);
+  z-index:30;
+}
+
+.secret-error p,
+.secret-window p{
+  padding:0 16px;
+}

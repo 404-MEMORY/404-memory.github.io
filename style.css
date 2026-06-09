@@ -256,8 +256,9 @@ button:hover{
 }
 
 .memory-rabbit{
-  width:100px;
+  width:140px;
   height:auto;
+
   image-rendering:pixelated;
 
   opacity:.9;

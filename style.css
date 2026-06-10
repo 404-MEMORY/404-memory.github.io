@@ -465,3 +465,8 @@ button:hover{
   min-height:50px !important;
   font-size:12px !important;
 }
+/* VISITOR LOG位置調整 */
+
+.visitor{
+  margin-left:-20px;
+}

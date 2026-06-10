@@ -206,16 +206,14 @@ h1{
   width:100%;
   height:auto;
   display:block;
-  border-bottom:1px solid #6f8cff;
-  filter:brightness(.9) contrast(1.1) saturate(.85) hue-rotate(8deg);
-}
 
-.photo-caption{
-  margin:0;
-  padding:10px;
-  text-align:center;
-  font-size:11px;
-  color:#b9d7ff;
+  border-bottom:1px solid #6f8cff;
+
+  filter:
+    brightness(.9)
+    contrast(1.1)
+    saturate(.85)
+    hue-rotate(8deg);
 }
 
 /* ボタン */

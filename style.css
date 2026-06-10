@@ -202,11 +202,19 @@ h1{
 
 /* PHOTO ARCHIVE */
 
-.memory-photo-large{
+
+.photo-box{
+  align-self:start;
+  overflow:hidden;
+}
+
+.memory-photo-wide{
   width:100%;
-  height:85px;
+  height:120px;
+
   object-fit:cover;
   object-position:center;
+
   display:block;
 
   border-bottom:1px solid #6f8cff;
@@ -218,21 +226,14 @@ h1{
     hue-rotate(8deg);
 }
 
-.photo-box{
-  align-self:start;
-}
-
-.memory-photo-wide{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
 .photo-caption{
   margin:0;
   padding:6px 10px;
+
   text-align:center;
+
   font-size:11px;
+
   color:#b9d7ff;
 }
 
@@ -387,9 +388,6 @@ button:hover{
     font-size:28px !important;
   }
 
-  .memory-photo-large{
-    height:180px;
-  }
 
   @media screen and (max-width:600px){
 

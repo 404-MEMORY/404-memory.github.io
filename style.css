@@ -218,6 +218,16 @@ h1{
     hue-rotate(8deg);
 }
 
+.photo-box{
+  align-self:start;
+}
+
+.memory-photo-wide{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
 .photo-caption{
   margin:0;
   padding:6px 10px;

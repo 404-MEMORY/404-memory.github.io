@@ -1,43 +1,109 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
+
+<!-- =========================
+     基本設定
+========================= -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ドットフォント -->
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
 <title>memory://archive</title>
+
+<!-- CSS読み込み -->
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+<!-- =========================
+     全体レイアウト
+========================= -->
+
 <div class="desktop">
 
+  <!-- =========================
+       左メニュー
+       PROFILE
+       LOG
+       CONNECTION
+       ARCHIVE
+  ========================= -->
+
   <div class="sidebar">
-    <a href="profile.html">♡<br>PROFILE</a>
-    <a href="diary.html">▣<br>LOG</a>
-    <a href="connection.html">⌁<br>CONNECTION</a>
-    <a href="secret.html">☆<br>ARCHIVE</a>
+
+    <a href="profile.html">
+      ♡<br>PROFILE
+    </a>
+
+    <a href="diary.html">
+      ▣<br>LOG
+    </a>
+
+    <a href="connection.html">
+      ⌁<br>CONNECTION
+    </a>
+
+    <a href="secret.html">
+      ☆<br>ARCHIVE
+    </a>
+
   </div>
+
+
+  <!-- =========================
+       メイン画面
+       タイトル・時計・HP
+  ========================= -->
 
   <main class="main">
 
+    <!-- =========================
+         タイトル部分
+    ========================= -->
+
     <section class="hero">
+
       <h1>memory://archive</h1>
+
+      <!-- 接続状態 -->
 
       <div class="status-line">
         STATUS : <span class="online"></span> ONLINE
       </div>
 
+      <!-- 説明文 + うさぎ -->
+
       <div class="hero-content">
+
         <div class="hero-text">
-          <p>Connected memories are<br>being stored.</p>
-          <p class="receiving">Receiving... █</p>
+          <p>
+            Connected memories are<br>
+            being stored.
+          </p>
+
+          <p class="receiving">
+            Receiving... █
+          </p>
         </div>
 
         <img src="rabbit.png" class="memory-rabbit">
+
       </div>
 
+
+      <!-- =========================
+           システム情報
+      ========================= -->
+
       <div class="system-row">
+
         <div>
           <span>SYSTEM CLOCK</span>
           <strong id="clock">00:00:00</strong>
@@ -45,59 +111,103 @@
 
         <div>
           <span>LINK UPTIME</span>
-          <strong><span id="days">0</span> DAYS</strong>
+          <strong>
+            <span id="days">0</span> DAYS
+          </strong>
         </div>
 
         <div>
           <span>STATUS</span>
           <strong>ACTIVE</strong>
         </div>
+
       </div>
 
+
+      <!-- =========================
+           ハートゲージ
+      ========================= -->
+
       <div class="heart-gauge">
+
         <span>MEMORY HP</span>
 
         <div class="hearts">
+
           <span class="heart full">♥</span>
+
           <span class="heart full">♥</span>
+
           <span class="heart low">♥</span>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =========================
+         VISITOR LOG
+    ========================= -->
 
     <section class="bottom-row">
 
       <div class="window-box visitor">
+
         <div class="window-title">
+
           <h3>VISITOR LOG</h3>
+
           <div class="window-controls">
             <span>_</span>
             <span>□</span>
             <span>×</span>
           </div>
+
         </div>
 
-        <p class="count">00000001</p>
-        <p>Last signal still received.</p>
+        <p class="count">
+          00000001
+        </p>
+
+        <p>
+          Last signal still received.
+        </p>
+
       </div>
 
     </section>
 
   </main>
 
+
+  <!-- =========================
+       右サイドウィンドウ群
+  ========================= -->
+
   <aside class="right-panel">
 
+    <!-- LINK STATUS -->
+
     <div class="window-box">
+
       <div class="window-title">
+
         <h3>LINK STATUS</h3>
+
         <div class="window-controls">
           <span>_</span>
           <span>□</span>
           <span>×</span>
         </div>
+
       </div>
 
-      <p>Established :<br>2022.09.20</p>
+      <p>
+        Established :<br>
+        2022.09.20
+      </p>
 
       <p>
         WORLD END TIMER :<br>
@@ -107,38 +217,62 @@
       <div class="separator"></div>
 
       <p>404 MEMORY</p>
+
     </div>
 
+
+    <!-- PHOTO ARCHIVE -->
+
     <div class="window-box photo-box">
+
       <div class="window-title">
+
         <h3>PHOTO ARCHIVE</h3>
+
         <div class="window-controls">
           <span>_</span>
           <span>□</span>
           <span>×</span>
         </div>
+
       </div>
 
-      <img src="memory-photo.jpg" class="memory-photo-large">
+      <img
+        src="memory-photo.jpg"
+        class="memory-photo-large"
+      >
 
       <p class="photo-caption">
         Signal image stored.
       </p>
+
     </div>
 
+
+    <!-- LAST SIGNAL -->
+
     <div class="window-box">
+
       <div class="window-title">
+
         <h3>LAST SIGNAL</h3>
+
         <div class="window-controls">
           <span>_</span>
           <span>□</span>
           <span>×</span>
         </div>
+
       </div>
 
       <p>memory.mp3</p>
 
-      <p>Status : <span id="signalStatus">Waiting...</span></p>
+      <p>
+        Status :
+        <span id="signalStatus">
+          Waiting...
+        </span>
+      </p>
 
       <button onclick="playSignal()">
         ▶ RECEIVE SIGNAL
@@ -147,104 +281,207 @@
       <audio id="signalAudio">
         <source src="memory.mp3" type="audio/mpeg">
       </audio>
+
     </div>
 
+
+    <!-- SECRET入口 -->
+
     <div id="errorWindow" class="secret-error">
+
       <div class="window-title">
+
         <h3>ERROR.LOG</h3>
+
         <div class="window-controls">
           <span>_</span>
           <span>□</span>
+
+          <!-- SECRET開放 -->
+
           <span onclick="openSecret()">×</span>
+
         </div>
+
       </div>
 
       <p>ERROR : hidden file detected.</p>
+
       <p>Click × to close.</p>
+
     </div>
 
   </aside>
 
 </div>
 
+
+<!-- =========================
+     SECRETウィンドウ
+========================= -->
+
 <div id="secretWindow" class="secret-window">
+
   <div class="window-title">
+
     <h3>SECRET.LOG</h3>
+
     <div class="window-controls">
+
       <span>_</span>
       <span>□</span>
+
       <span onclick="closeSecret()">×</span>
+
     </div>
+
   </div>
 
   <p>Access granted.</p>
-  <p>This memory was hidden from public view.</p>
+
+  <p>
+    This memory was hidden
+    from public view.
+  </p>
 
   <a href="letter.html" class="secret-link">
     OPEN LETTER →
   </a>
+
 </div>
+
+
+<!-- =========================
+     下部タスクバー
+========================= -->
 
 <div class="taskbar">
+
   <span>● Receiving...</span>
+
   <span>● Synchronizing...</span>
+
   <span>● Waiting for response...</span>
+
   <span id="task-clock">00:00</span>
+
 </div>
 
+
+<!-- =========================
+     JavaScript
+========================= -->
+
 <script>
+
+/* 時計更新 */
 function updateClock(){
+
   const now = new Date();
+
   const h = String(now.getHours()).padStart(2,"0");
   const m = String(now.getMinutes()).padStart(2,"0");
   const s = String(now.getSeconds()).padStart(2,"0");
 
-  document.getElementById("clock").textContent = `${h}:${m}:${s}`;
-  document.getElementById("task-clock").textContent = `${h}:${m}`;
+  document.getElementById("clock").textContent =
+    `${h}:${m}:${s}`;
+
+  document.getElementById("task-clock").textContent =
+    `${h}:${m}`;
 }
 
 setInterval(updateClock,1000);
 updateClock();
 
+
+/* 経過日数計算 */
 const start = new Date("2022-09-20");
+
 const today = new Date();
-const diff = Math.floor((today - start)/(1000*60*60*24));
-document.getElementById("days").textContent = diff;
 
+const diff =
+  Math.floor(
+    (today-start) /
+    (1000*60*60*24)
+  );
+
+document.getElementById("days").textContent =
+  diff;
+
+
+/* 音声再生 */
 function playSignal(){
-  const audio = document.getElementById("signalAudio");
-  const status = document.getElementById("signalStatus");
 
-  status.textContent = "Receiving...";
+  const audio =
+    document.getElementById("signalAudio");
+
+  const status =
+    document.getElementById("signalStatus");
+
+  status.textContent =
+    "Receiving...";
+
   audio.play();
 
   setTimeout(function(){
-    status.textContent = "Connected";
+
+    status.textContent =
+      "Connected";
+
   },3000);
 }
 
+
+/* 世界終了タイマー */
 const worldEnd = new Date();
-worldEnd.setFullYear(worldEnd.getFullYear() + 500);
+
+worldEnd.setFullYear(
+  worldEnd.getFullYear()+500
+);
 
 function updateWorldTimer(){
-  const now = new Date();
-  const diff = worldEnd - now;
-  const days = Math.floor(diff / (1000*60*60*24));
 
-  document.getElementById("endDays").textContent = days.toLocaleString();
+  const now = new Date();
+
+  const diff =
+    worldEnd-now;
+
+  const days =
+    Math.floor(
+      diff /
+      (1000*60*60*24)
+    );
+
+  document.getElementById("endDays").textContent =
+    days.toLocaleString();
 }
 
 updateWorldTimer();
-setInterval(updateWorldTimer,1000);
 
+setInterval(
+  updateWorldTimer,
+  1000
+);
+
+
+/* SECRET開く */
 function openSecret(){
-  document.getElementById("errorWindow").style.display = "none";
-  document.getElementById("secretWindow").style.display = "block";
+
+  document.getElementById("errorWindow")
+    .style.display = "none";
+
+  document.getElementById("secretWindow")
+    .style.display = "block";
 }
 
+
+/* SECRET閉じる */
 function closeSecret(){
-  document.getElementById("secretWindow").style.display = "none";
+
+  document.getElementById("secretWindow")
+    .style.display = "none";
 }
+
 </script>
 
 </body>

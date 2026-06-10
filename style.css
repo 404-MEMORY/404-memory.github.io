@@ -378,12 +378,17 @@ button:hover{
     height:180px;
   }
 
+  @media screen and (max-width:600px){
+
   .secret-error{
-    position:fixed;
-    right:8px;
-    bottom:765px;
+    position:relative;
+    right:auto;
+    bottom:auto;
     width:220px;
+    margin-top:20px;
   }
+
+}
 
   .taskbar{
     font-size:12px;

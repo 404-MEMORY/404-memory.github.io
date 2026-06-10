@@ -478,3 +478,30 @@ button:hover{
   font-size:12px;
 
 }
+/* =========================
+   MESSAGE RECOVERY ウィンドウ
+   右下のメッセージ復元機能
+========================= */
+
+.recovery-box{
+
+  /* ウィンドウ横幅 */
+  width:150px;
+
+  /* 左右位置調整 */
+  margin-left:175px;
+
+  /* 上下位置調整 */
+  margin-top:-20px;
+
+}
+
+.recovery-box p{
+
+  /* メッセージ表示欄の高さ */
+  min-height:50px;
+
+  /* メッセージ文字サイズ */
+  font-size:12px;
+
+}

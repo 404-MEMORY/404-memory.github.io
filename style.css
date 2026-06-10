@@ -220,14 +220,17 @@ button:hover{
 }
 
 .secret-error{
-  position:fixed;
-  right:30px;
-  bottom:70px;
-  width:300px;
+  position:relative;
+
+  right:auto;
+  bottom:auto;
+
+  width:100%;
+  margin-top:20px;
+
   border:2px solid #6f8cff;
   background:rgba(0,0,40,.85);
   box-shadow:0 0 14px rgba(120,180,255,.55);
-  z-index:20;
 }
 
 .secret-window{

@@ -122,8 +122,9 @@ h1{
 
 .bottom-row{
   display:grid;
-  grid-template-columns:2fr 1fr;
-  gap:25px;
+  grid-template-columns:180px 140px 140px;
+  gap:15px;
+  align-items:start;
 }
 
 /* PHOTO と VISITOR の高さを揃える */

@@ -117,6 +117,7 @@ h1{
   color:#8feaff;
 }
 
+
 /* 下段 */
 
 .bottom-row{
@@ -125,6 +126,11 @@ h1{
   gap:25px;
 }
 
+/* PHOTO と VISITOR の高さを揃える */
+
+.bottom-row .window-box{
+  height:210px;
+}
 /* 右パネル */
 
 .right-panel{
@@ -440,6 +446,3 @@ button:hover{
 
 } 
 
-.visitor{
-  height:230px;
-}

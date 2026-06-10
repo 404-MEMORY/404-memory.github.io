@@ -293,6 +293,52 @@ body::before{
   </div>
 
 </div>
+<script>
+const targets = document.querySelectorAll(".corrupt-target");
 
+targets.forEach(function(target){
+  target.dataset.original = target.textContent;
+});
+
+function corruptText(text){
+  const symbols = ["█", "▓", "▒", "░", "□", "◇", "_"];
+
+  if(text.length <= 1){
+    return text;
+  }
+
+  const chars = text.split("");
+  const count = Math.max(1, Math.floor(chars.length * 0.18));
+
+  for(let i = 0; i < count; i++){
+    const index = Math.floor(Math.random() * chars.length);
+
+    if(chars[index] !== " " && chars[index] !== "/" && chars[index] !== ":"){
+      chars[index] = symbols[Math.floor(Math.random() * symbols.length)];
+    }
+  }
+
+  return chars.join("");
+}
+
+setInterval(function(){
+
+  const target =
+    targets[Math.floor(Math.random() * targets.length)];
+
+  target.textContent =
+    corruptText(target.dataset.original);
+
+  target.style.opacity =
+    Math.random() > 0.5 ? ".45" : "1";
+
+  setTimeout(function(){
+    target.textContent = target.dataset.original;
+    target.style.opacity = "1";
+  }, 180);
+
+}, 900);
+</script>
+  
 </body>
 </html>

@@ -275,7 +275,53 @@
   </aside>
 
 </div>
+<!-- WARNINGウィンドウ -->
 
+<div id="warningWindow" class="secret-window">
+
+  <div class="window-title">
+    <h3>WARNING</h3>
+
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span onclick="closeWarning()">×</span>
+    </div>
+  </div>
+
+  <p>Hidden memory detected.</p>
+  <p>Open protected archive?</p>
+
+  <button onclick="openPassword()">
+    YES
+  </button>
+
+</div>
+
+
+<!-- PASSWORDウィンドウ -->
+
+<div id="passwordWindow" class="secret-window">
+
+  <div class="window-title">
+    <h3>PASSWORD</h3>
+
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span onclick="closePassword()">×</span>
+    </div>
+  </div>
+
+  <p>Enter access code.</p>
+
+  <input type="password" id="secretPassword" placeholder="PASSWORD">
+
+  <button onclick="checkPassword()">
+    ACCESS
+  </button>
+
+</div>
 
 <!-- =========================
      SECRETウィンドウ

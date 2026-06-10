@@ -380,8 +380,6 @@ button:hover{
   }
 
 
-  @media screen and (max-width:600px){
-
   .secret-error{
     position:relative;
     right:auto;

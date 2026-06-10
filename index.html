@@ -471,12 +471,50 @@ function openSecret(){
   document.getElementById("errorWindow")
     .style.display = "none";
 
-  document.getElementById("secretWindow")
+  document.getElementById("warningWindow")
     .style.display = "block";
 }
 
-
 /* SECRET閉じる */
+
+function closeWarning(){
+  document.getElementById("warningWindow").style.display = "none";
+}
+
+function openPassword(){
+
+  document.getElementById("warningWindow")
+    .style.display = "none";
+
+  document.getElementById("passwordWindow")
+    .style.display = "block";
+}
+
+function closePassword(){
+
+  document.getElementById("passwordWindow")
+    .style.display = "none";
+}
+
+function checkPassword(){
+
+  const pass =
+    document.getElementById("secretPassword").value;
+
+  if(pass === "928"){
+
+    document.getElementById("passwordWindow")
+      .style.display = "none";
+
+    document.getElementById("secretWindow")
+      .style.display = "block";
+
+  }else{
+
+    alert("ACCESS DENIED");
+  }
+}
+
 function closeSecret(){
 
   document.getElementById("secretWindow")

@@ -335,7 +335,7 @@ button:hover{
   .secret-error{
     position:fixed;
     right:8px;
-    bottom:600px;
+    bottom:800px;
     width:220px;
   }
 

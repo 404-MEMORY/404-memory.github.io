@@ -4,22 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SUBJECT FILE</title>
-
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
   min-height:100vh;
-  background:#06142f;
-  color:#c8eaff;
-  font-family:'DotGothic16',sans-serif;
   background-image:url("bg2.png");
   background-size:cover;
   background-position:center;
+  color:#c8eaff;
+  font-family:'DotGothic16',sans-serif;
+  overflow-x:hidden;
 }
 
-/* CRT走査線 */
+/* 画面全体の走査線 */
 body::after{
   content:"";
   position:fixed;
@@ -28,25 +27,45 @@ body::after{
   background:
     repeating-linear-gradient(
       to bottom,
-      rgba(255,255,255,.04) 0px,
-      rgba(255,255,255,.04) 1px,
+      rgba(255,255,255,.08) 0px,
+      rgba(255,255,255,.08) 1px,
       transparent 2px,
       transparent 4px
     );
+  mix-blend-mode:screen;
   z-index:999;
 }
 
-/* 全体 */
+/* 画面全体に走るカラーノイズ */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,
+      transparent 0%,
+      rgba(0,255,255,.18) 20%,
+      transparent 30%,
+      rgba(255,0,180,.18) 55%,
+      transparent 70%,
+      rgba(255,255,0,.15) 90%,
+      transparent 100%
+    );
+  opacity:.25;
+  animation:noiseMove .45s infinite steps(2);
+  z-index:998;
+}
+
 .profile-wrap{
   max-width:620px;
   margin:80px auto;
   border:2px solid #6f8cff;
   background:rgba(0,0,40,.78);
   box-shadow:0 0 22px rgba(120,180,255,.55);
-  animation:screenNoise 8s infinite;
+  animation:screenBreak 5s infinite;
 }
 
-/* タイトルバー */
 .window-title{
   display:flex;
   justify-content:space-between;
@@ -78,27 +97,31 @@ body::after{
   background:rgba(255,255,255,.18);
 }
 
-/* 中身 */
 .profile-content{
+  position:relative;
   padding:24px;
   font-size:16px;
   line-height:2;
+}
+
+/* 文字を見にくくする色ズレ */
+.glitch-text{
+  position:relative;
+  text-shadow:
+    2px 0 #ff3bd5,
+    -2px 0 #35ffff,
+    0 0 8px #8feaff;
+  animation:textGlitch 1.8s infinite;
 }
 
 .label{
   color:#8feaff;
 }
 
-.glitch-word{
-  color:#dce4ff;
-  text-shadow:0 0 8px #8feaff;
-}
-
-/* Receiving点滅 */
 .receiving{
   margin-top:24px;
   color:#8feaff;
-  animation:blinkReceive 1s infinite;
+  animation:blinkReceive .8s infinite;
 }
 
 .back-link{
@@ -108,45 +131,99 @@ body::after{
   text-decoration:none;
 }
 
-/* 画面が一瞬壊れる */
-@keyframes screenNoise{
-  0%,94%,100%{
+/* 横にノイズの帯 */
+.noise-bar{
+  position:absolute;
+  left:0;
+  right:0;
+  height:14px;
+  background:linear-gradient(
+    90deg,
+    #00ffff,
+    #ff00cc,
+    #ffff00,
+    #ffffff,
+    #0066ff
+  );
+  opacity:.35;
+  mix-blend-mode:screen;
+  animation:barNoise 2.2s infinite steps(1);
+}
+
+.noise-bar.one{ top:30%; }
+.noise-bar.two{ top:58%; height:8px; }
+.noise-bar.three{ top:76%; height:18px; }
+
+/* アニメーション */
+@keyframes screenBreak{
+  0%,88%,100%{
     filter:none;
     transform:translateX(0);
   }
 
-  95%{
-    filter:brightness(1.4) contrast(1.5);
+  89%{
+    filter:contrast(1.8) brightness(1.25);
+    transform:translateX(-3px);
+  }
+
+  90%{
+    filter:hue-rotate(80deg) contrast(2);
+    transform:translateX(3px);
+  }
+
+  91%{
+    filter:brightness(.7) contrast(2.2);
+    transform:translateX(-1px);
+  }
+
+  92%{
+    filter:none;
+    transform:translateX(0);
+  }
+}
+
+@keyframes textGlitch{
+  0%,85%,100%{
+    transform:none;
+    opacity:1;
+  }
+
+  86%{
     transform:translateX(-2px);
+    opacity:.6;
   }
 
-  96%{
-    filter:brightness(.8) contrast(1.8);
-    transform:translateX(2px);
+  87%{
+    transform:translateX(3px);
+    opacity:1;
   }
 
-  97%{
-    filter:none;
-    transform:translateX(0);
+  88%{
+    transform:translateX(-1px);
+    opacity:.45;
   }
 }
 
-/* 点滅 */
+@keyframes noiseMove{
+  0%{ transform:translateX(-30px); opacity:.18; }
+  50%{ transform:translateX(30px); opacity:.35; }
+  100%{ transform:translateX(-10px); opacity:.22; }
+}
+
+@keyframes barNoise{
+  0%{ transform:translateX(-80%); opacity:0; }
+  40%{ opacity:.45; }
+  45%{ transform:translateX(40%); opacity:.65; }
+  50%{ opacity:0; }
+  100%{ transform:translateX(100%); opacity:0; }
+}
+
 @keyframes blinkReceive{
-  0%,60%,100%{
-    opacity:1;
-  }
-
-  70%{
-    opacity:.25;
-  }
-
-  80%{
-    opacity:1;
-  }
+  0%,60%,100%{ opacity:1; }
+  70%{ opacity:.2; }
+  80%{ opacity:1; }
 }
 
-/* スマホ */
 @media screen and (max-width:600px){
   .profile-wrap{
     margin:50px 20px;
@@ -164,7 +241,7 @@ body::after{
 <div class="profile-wrap">
 
   <div class="window-title">
-    <h1>SUBJECT FILE</h1>
+    <h1 class="glitch-text">SUBJECT FILE</h1>
 
     <div class="window-controls">
       <span>_</span>
@@ -173,27 +250,21 @@ body::after{
     </div>
   </div>
 
-  <div class="profile-content">
+  <div class="profile-content glitch-text">
+
+    <div class="noise-bar one"></div>
+    <div class="noise-bar two"></div>
+    <div class="noise-bar three"></div>
+
+    <p><span class="label">個体識別コード :</span> 610</p>
+    <p><span class="label">状態 :</span> ACTIVE</p>
 
     <p>
-      <span class="label">個体識別コード :</span>
-      610
-    </p>
-
-    <p>
-      <span class="label">状態 :</span>
-      ACTIVE
-    </p>
-
-    <p>
-      <span class="label glitch-word">興█対象 :</span><br>
+      <span class="label">興█対象 :</span><br>
       外の世界 / くずは / 記憶
     </p>
 
-    <p>
-      <span class="label">備考 :</span>
-      重要観察対象
-    </p>
+    <p><span class="label">備考 :</span> 重要観察対象</p>
 
     <br>
 

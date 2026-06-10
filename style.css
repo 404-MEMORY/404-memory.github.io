@@ -388,3 +388,37 @@ button:hover{
     gap:18px;
   }
 }
+
+/* ハート */
+
+.heart-gauge{
+  margin-top:25px;
+  font-size:16px;
+  color:#bfc8ff;
+}
+
+.hearts{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+}
+
+.heart{
+  font-size:28px;
+  color:#8feaff;
+  text-shadow:0 0 8px #8feaff;
+}
+
+.heart.low{
+  animation:blinkHeart 1s infinite;
+}
+
+@keyframes blinkHeart{
+  0%,100%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:.25;
+  }
+}

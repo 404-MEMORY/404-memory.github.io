@@ -3,36 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROFILE</title>
+<title>SUBJECT FILE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <style>
 body{
-background:#dff8ff;
-color:#0077aa;
-font-family:Arial,sans-serif;
-text-align:center;
-padding-top:80px;
+  margin:0;
+  min-height:100vh;
+  background:#06142f;
+  color:#c8eaff;
+  font-family:'DotGothic16',sans-serif;
+  background-image:url("bg2.png");
+  background-size:cover;
+  background-position:center;
 }
 
-a{
-color:#0099cc;
-text-decoration:none;
+/* CRT走査線 */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,.04) 0px,
+      rgba(255,255,255,.04) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  z-index:999;
+}
+
+/* 全体 */
+.profile-wrap{
+  max-width:620px;
+  margin:80px auto;
+  border:2px solid #6f8cff;
+  background:rgba(0,0,40,.78);
+  box-shadow:0 0 22px rgba(120,180,255,.55);
+  animation:screenNoise 8s infinite;
+}
+
+/* タイトルバー */
+.window-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 10px;
+  background:linear-gradient(90deg,#6f8cff,#9bb7ff);
+}
+
+.window-title h1{
+  margin:0;
+  font-size:20px;
+  letter-spacing:3px;
+  color:white;
+}
+
+.window-controls{
+  display:flex;
+  gap:4px;
+}
+
+.window-controls span{
+  width:14px;
+  height:14px;
+  border:1px solid white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:9px;
+  background:rgba(255,255,255,.18);
+}
+
+/* 中身 */
+.profile-content{
+  padding:24px;
+  font-size:16px;
+  line-height:2;
+}
+
+.label{
+  color:#8feaff;
+}
+
+.glitch-word{
+  color:#dce4ff;
+  text-shadow:0 0 8px #8feaff;
+}
+
+/* Receiving点滅 */
+.receiving{
+  margin-top:24px;
+  color:#8feaff;
+  animation:blinkReceive 1s infinite;
+}
+
+.back-link{
+  display:block;
+  margin-top:28px;
+  color:#ff9bdc;
+  text-decoration:none;
+}
+
+/* 画面が一瞬壊れる */
+@keyframes screenNoise{
+  0%,94%,100%{
+    filter:none;
+    transform:translateX(0);
+  }
+
+  95%{
+    filter:brightness(1.4) contrast(1.5);
+    transform:translateX(-2px);
+  }
+
+  96%{
+    filter:brightness(.8) contrast(1.8);
+    transform:translateX(2px);
+  }
+
+  97%{
+    filter:none;
+    transform:translateX(0);
+  }
+}
+
+/* 点滅 */
+@keyframes blinkReceive{
+  0%,60%,100%{
+    opacity:1;
+  }
+
+  70%{
+    opacity:.25;
+  }
+
+  80%{
+    opacity:1;
+  }
+}
+
+/* スマホ */
+@media screen and (max-width:600px){
+  .profile-wrap{
+    margin:50px 20px;
+  }
+
+  .profile-content{
+    font-size:14px;
+  }
 }
 </style>
-
 </head>
 
 <body>
 
-<h1>PROFILE</h1>
+<div class="profile-wrap">
 
-<p>Name : 404</p>
-<p>Status : ONLINE</p>
-<p>Connection : Stable</p>
+  <div class="window-title">
+    <h1>SUBJECT FILE</h1>
 
-<br>
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span>×</span>
+    </div>
+  </div>
 
-<a href="index.html">HOME</a>
+  <div class="profile-content">
+
+    <p>
+      <span class="label">個体識別コード :</span>
+      610
+    </p>
+
+    <p>
+      <span class="label">状態 :</span>
+      ACTIVE
+    </p>
+
+    <p>
+      <span class="label glitch-word">興█対象 :</span><br>
+      外の世界 / くずは / 記憶
+    </p>
+
+    <p>
+      <span class="label">備考 :</span>
+      重要観察対象
+    </p>
+
+    <br>
+
+    <p>
+      <span class="label">観測継続日数 :</span><br>
+      XXXX DAYS
+    </p>
+
+    <p class="receiving">
+      Receiving... █
+    </p>
+
+    <a href="index.html" class="back-link">
+      ← RETURN TO MEMORY
+    </a>
+
+  </div>
+
+</div>
 
 </body>
 </html>

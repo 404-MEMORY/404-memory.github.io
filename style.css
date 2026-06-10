@@ -10,6 +10,8 @@ body{
   font-family:'DotGothic16',sans-serif;
 }
 
+/* 全体レイアウト */
+
 .desktop{
   display:grid;
   grid-template-columns:150px 1fr 420px;
@@ -30,6 +32,12 @@ body{
   text-decoration:none;
   font-size:18px;
   text-shadow:0 0 8px #8097ff;
+}
+
+/* メイン */
+
+.main{
+  min-width:0;
 }
 
 .hero{
@@ -61,10 +69,32 @@ h1{
   box-shadow:0 0 10px #35ffb3;
 }
 
+.hero-content{
+  display:flex;
+  align-items:center;
+  gap:80px;
+}
+
 .receiving{
   font-size:24px;
   margin-top:35px;
 }
+
+.memory-rabbit{
+  width:220px;
+  image-rendering:pixelated;
+  position:relative;
+  left:120px;
+  animation:floatRabbit 4s ease-in-out infinite;
+}
+
+@keyframes floatRabbit{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-12px); }
+  100%{ transform:translateY(0); }
+}
+
+/* ステータス行 */
 
 .system-row{
   display:grid;
@@ -87,11 +117,15 @@ h1{
   color:#8feaff;
 }
 
+/* 下段 */
+
 .bottom-row{
   display:grid;
   grid-template-columns:1.4fr .8fr;
   gap:25px;
 }
+
+/* 右パネル */
 
 .right-panel{
   display:flex;
@@ -100,6 +134,8 @@ h1{
   padding-top:60px;
 }
 
+/* ウィンドウ共通 */
+
 .window-box{
   border:2px solid #6f8cff;
   background:rgba(0,0,40,.72);
@@ -107,19 +143,48 @@ h1{
   color:#dce4ff;
 }
 
-.window-box h3{
+.window-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 10px;
+  background:linear-gradient(90deg,#6f8cff,#9bb7ff);
+}
+
+.window-title h3{
   margin:0;
-  padding:8px 12px;
-  background:linear-gradient(90deg,#4f65d8,#8aa2ff);
   color:white;
-  font-size:20px;
+  font-size:16px;
   letter-spacing:2px;
+}
+
+.window-controls{
+  display:flex;
+  gap:4px;
+}
+
+.window-controls span{
+  width:14px;
+  height:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #ffffff;
+  color:#ffffff;
+  font-size:9px;
+  line-height:1;
+  background:rgba(255,255,255,.18);
 }
 
 .window-box p{
   padding:0 18px;
   font-size:18px;
   line-height:1.7;
+}
+
+.separator{
+  border-top:1px dashed #6f8cff;
+  margin:12px 0;
 }
 
 .count{
@@ -135,36 +200,38 @@ h1{
   color:#ff7dbd;
 }
 
-.taskbar{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
-  height:42px;
-  background:rgba(45,70,180,.9);
-  border-top:2px solid #8aa2ff;
-  display:flex;
-  align-items:center;
-  gap:35px;
-  padding:0 20px;
-  color:#dce4ff;
+/* PHOTO ARCHIVE */
+
+.memory-photo-large{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+  border-bottom:1px solid #6f8cff;
+  filter:
+    brightness(.9)
+    contrast(1.1)
+    saturate(.85)
+    hue-rotate(8deg);
 }
 
-#task-clock{
-  margin-left:auto;
-  font-size:22px;
+.photo-caption{
+  margin:0;
+  padding:10px;
+  text-align:center;
+  font-size:11px;
+  color:#b9d7ff;
 }
+
+/* ボタン */
+
 button{
   background:#001133;
   color:#8eeeff;
   border:1px solid #6f8cff;
-
   padding:8px 14px;
-
   font-family:'DotGothic16',sans-serif;
-
   cursor:pointer;
-
   box-shadow:0 0 10px rgba(120,180,255,.4);
 }
 
@@ -172,62 +239,13 @@ button:hover{
   background:#002255;
   box-shadow:0 0 20px rgba(120,180,255,.8);
 }
-.separator{
-  border-top:1px dashed #6f8cff;
-  margin:12px 0;
-}
-.window-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
 
-  padding:8px 10px;
-
-  background:linear-gradient(
-    90deg,
-    #6f8cff,
-    #9bb7ff
-  );
-}
-
-.window-title h3{
-  margin:0;
-  color:white;
-  font-size:16px;
-}
-
-.window-controls{
-  display:flex;
-  gap:4px;
-}
-
-.window-controls span{
-  width:14px;
-  height:14px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border:1px solid #ffffff;
-
-  color:white;
-
-  font-size:9px;
-  line-height:1;
-
-  background:rgba(255,255,255,.1);
-}
+/* SECRET */
 
 .secret-error{
   position:relative;
-
-  right:auto;
-  bottom:auto;
-
   width:100%;
   margin-top:20px;
-
   border:2px solid #6f8cff;
   background:rgba(0,0,40,.85);
   box-shadow:0 0 14px rgba(120,180,255,.55);
@@ -248,57 +266,16 @@ button:hover{
 .secret-error p,
 .secret-window p{
   padding:0 16px;
-
 }
 
-
-.hero-content{
-  display:flex;
-  align-items:center;
-  gap:80px;
+.secret-link{
+  display:block;
+  margin:15px;
+  color:#ff9bdc;
+  text-decoration:none;
 }
 
-.memory-rabbit{
-  width:220px;
-  image-rendering:pixelated;
-
-  animation:floatRabbit 4s ease-in-out infinite;
-
-  position:relative;
-  left:120px;
-}
-
-@keyframes floatRabbit{
-  0%{
-    transform:translateY(0px);
-  }
-
-  50%{
-    transform:translateY(-12px);
-  }
-
-  100%{
-    transform:translateY(0px);
-  }
-}
-
-@media screen and (max-width: 600px){
-
-  .hero-content{
-    gap:20px;
-  }
-
-  .memory-rabbit{
-    width:120px;
-    left:0;
-  }
-
-  .right-panel{
-    width:220px;
-  }
-
-}
-
+/* LETTER PAGE */
 
 .letter-page{
   min-height:100vh;
@@ -323,14 +300,83 @@ button:hover{
   line-height:1.9;
 }
 
-.secret-link{
-  display:block;
-  margin:15px;
-  color:#ff9bdc;
-  text-decoration:none;
+/* 下タスクバー */
+
+.taskbar{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  height:42px;
+  background:rgba(45,70,180,.9);
+  border-top:2px solid #8aa2ff;
+  display:flex;
+  align-items:center;
+  gap:35px;
+  padding:0 20px;
+  color:#dce4ff;
 }
 
+#task-clock{
+  margin-left:auto;
+  font-size:22px;
+}
+
+/* スマホ調整 */
+
 @media screen and (max-width:600px){
+
+  .desktop{
+    grid-template-columns:115px 330px 260px;
+    gap:18px;
+    padding:70px 20px 70px;
+  }
+
+  .sidebar a{
+    font-size:14px;
+  }
+
+  .hero{
+    padding:25px;
+  }
+
+  h1{
+    font-size:30px;
+  }
+
+  .status-line{
+    font-size:16px;
+    padding:8px 14px;
+  }
+
+  .hero-content{
+    gap:20px;
+  }
+
+  .memory-rabbit{
+    width:120px;
+    left:0;
+  }
+
+  .system-row strong{
+    font-size:22px;
+  }
+
+  .right-panel{
+    width:220px;
+  }
+
+  .window-box p{
+    font-size:14px;
+  }
+
+  .count{
+    font-size:28px !important;
+  }
+
+  .memory-photo-large{
+    height:180px;
+  }
 
   .secret-error{
     position:fixed;
@@ -339,19 +385,8 @@ button:hover{
     width:220px;
   }
 
-}
-
-.memory-photo-large{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  display:block;
-  border:1px solid #6f8cff;
-  filter:brightness(.95) contrast(1.05);
-}
-
-.photo-caption{
-  text-align:center;
-  font-size:11px;
-  color:#b9d7ff;
+  .taskbar{
+    font-size:12px;
+    gap:18px;
+  }
 }

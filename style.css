@@ -204,7 +204,9 @@ h1{
 
 .memory-photo-large{
   width:100%;
-  height:auto;
+  height:120px;
+  object-fit:cover;
+  object-position:center;
   display:block;
 
   border-bottom:1px solid #6f8cff;
@@ -214,6 +216,14 @@ h1{
     contrast(1.1)
     saturate(.85)
     hue-rotate(8deg);
+}
+
+.photo-caption{
+  margin:0;
+  padding:6px 10px;
+  text-align:center;
+  font-size:11px;
+  color:#b9d7ff;
 }
 
 /* ボタン */

@@ -535,10 +535,60 @@ function checkPassword(){
   }
 }
 
+     /* 復元されたメッセージ */
 function closeSecret(){
 
   document.getElementById("secretWindow")
     .style.display = "none";
+}
+const messages = [
+
+
+"500億年生きる",
+
+"これ海藻なんだけど",
+
+"個体928を検出",
+
+"ずっとここにいるから",
+
+"応答待機中",
+
+"今日も楽しかった",
+
+"また後で記録します",
+
+"ずっと大好きだよ",
+
+"観測を継続してください",
+
+"接続状態は良好です",
+
+"何も忘れたくない",
+
+"信号が不安定です",
+
+"思い出せない",
+
+"████████",
+
+"また明日。"
+
+];
+
+function recoverMessage(){
+
+  const msg =
+    messages[
+      Math.floor(
+        Math.random() *
+        messages.length
+      )
+    ];
+
+  document.getElementById(
+    "messageText"
+  ).textContent = msg;
 }
 
 </script>

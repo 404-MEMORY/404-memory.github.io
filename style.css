@@ -374,22 +374,21 @@ button:hover{
   }
 
 
-  .secret-error{
-    position:relative;
-    right:auto;
-    bottom:auto;
-    width:220px;
-    height:230px;
-    margin-top:20px;
-  }
+  
+.secret-error{
+  position:relative;
+  top:-70px;
+  width:220px;
+  margin-top:20px;
 
 }
+
 
   .taskbar{
     font-size:12px;
     gap:18px;
   }
-}
+
 
 /* ハート */
 

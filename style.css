@@ -329,3 +329,11 @@ button:hover{
   color:#ff9bdc;
   text-decoration:none;
 }
+
+@media screen and (max-width:600px){
+  .secret-error{
+    right:24px;
+    bottom:210px;
+    width:230px;
+  }
+}

@@ -437,4 +437,9 @@ button:hover{
   object-position:center;
   display:block;
   border-bottom:1px solid #6f8cff;
+
+} 
+
+.visitor{
+  height:230px;
 }

@@ -456,18 +456,15 @@ button:hover{
 
 /* RECOVERED MESSAGE サイズ強制 */
 
+/* MESSAGE RECOVERY */
+
 .recovery-box{
-  width:150px !important;
-  margin-left:175px !important;
-  margin-top:-20px !important;
+  width:140px !important;
+  margin-left:0 !important;
+  margin-top:0 !important;
 }
 
 .recovery-box p{
   min-height:50px !important;
   font-size:12px !important;
-}
-/* VISITOR LOG位置調整 */
-
-.visitor{
-  margin-left:-120px;
 }

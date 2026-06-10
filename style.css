@@ -295,3 +295,34 @@ button:hover{
   }
 
 }
+
+
+.letter-page{
+  min-height:100vh;
+  background-image:url("bg2.png");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:#c8eaff;
+  font-family:'DotGothic16',sans-serif;
+}
+
+.letter-box{
+  max-width:650px;
+  margin:80px auto;
+  border:2px solid #ff9bdc;
+  background:rgba(20,0,40,.85);
+  box-shadow:0 0 25px rgba(255,150,220,.55);
+}
+
+.letter-content{
+  padding:25px;
+  line-height:1.9;
+}
+
+.secret-link{
+  display:block;
+  margin:15px;
+  color:#ff9bdc;
+  text-decoration:none;
+}

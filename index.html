@@ -30,55 +30,33 @@
 
   <!-- =========================
        左メニュー
-       PROFILE
-       LOG
-       CONNECTION
-       ARCHIVE
   ========================= -->
 
   <div class="sidebar">
 
-    <a href="profile.html">
-      ♡<br>PROFILE
-    </a>
-
-    <a href="diary.html">
-      ▣<br>LOG
-    </a>
-
-    <a href="connection.html">
-      ⌁<br>CONNECTION
-    </a>
-
-    <a href="secret.html">
-      ☆<br>ARCHIVE
-    </a>
+    <a href="profile.html">♡<br>PROFILE</a>
+    <a href="diary.html">▣<br>LOG</a>
+    <a href="connection.html">⌁<br>CONNECTION</a>
+    <a href="secret.html">☆<br>ARCHIVE</a>
 
   </div>
 
 
   <!-- =========================
        メイン画面
-       タイトル・時計・HP
   ========================= -->
 
   <main class="main">
 
-    <!-- =========================
-         タイトル部分
-    ========================= -->
+    <!-- タイトル部分 -->
 
     <section class="hero">
 
       <h1>memory://archive</h1>
 
-      <!-- 接続状態 -->
-
       <div class="status-line">
         STATUS : <span class="online"></span> ONLINE
       </div>
-
-      <!-- 説明文 + うさぎ -->
 
       <div class="hero-content">
 
@@ -98,9 +76,7 @@
       </div>
 
 
-      <!-- =========================
-           システム情報
-      ========================= -->
+      <!-- システム情報 -->
 
       <div class="system-row">
 
@@ -111,9 +87,7 @@
 
         <div>
           <span>LINK UPTIME</span>
-          <strong>
-            <span id="days">0</span> DAYS
-          </strong>
+          <strong><span id="days">0</span> DAYS</strong>
         </div>
 
         <div>
@@ -124,22 +98,16 @@
       </div>
 
 
-      <!-- =========================
-           ハートゲージ
-      ========================= -->
+      <!-- ハートゲージ -->
 
       <div class="heart-gauge">
 
         <span>MEMORY HP</span>
 
         <div class="hearts">
-
           <span class="heart full">♥</span>
-
           <span class="heart full">♥</span>
-
           <span class="heart low">♥</span>
-
         </div>
 
       </div>
@@ -148,26 +116,69 @@
 
 
     <!-- =========================
-         VISITOR LOG
+         下段ウィンドウ
+         PHOTO ARCHIVE / VISITOR LOG
     ========================= -->
 
-   <section class="bottom-row">
+    <section class="bottom-row">
 
-  <div class="window-box photo-box">
-    ...
-  </div>
+      <!-- PHOTO ARCHIVE -->
 
-  <div class="window-box visitor">
-    ...
-  </div>
+      <div class="window-box photo-box">
 
-</section>
+        <div class="window-title">
+
+          <h3>PHOTO ARCHIVE</h3>
+
+          <div class="window-controls">
+            <span>_</span>
+            <span>□</span>
+            <span>×</span>
+          </div>
+
+        </div>
+
+        <img src="memory-photo.jpg" class="memory-photo-wide">
+
+        <p class="photo-caption">
+          Signal image stored.
+        </p>
+
+      </div>
+
+
+      <!-- VISITOR LOG -->
+
+      <div class="window-box visitor">
+
+        <div class="window-title">
+
+          <h3>VISITOR LOG</h3>
+
+          <div class="window-controls">
+            <span>_</span>
+            <span>□</span>
+            <span>×</span>
+          </div>
+
+        </div>
+
+        <p class="count">00000001</p>
+
+        <p>
+          Last signal still received.
+        </p>
+
+      </div>
+
+    </section>
 
   </main>
 
 
   <!-- =========================
        右サイドウィンドウ群
+       LINK STATUS / LAST SIGNAL / ERROR
   ========================= -->
 
   <aside class="right-panel">
@@ -205,34 +216,6 @@
     </div>
 
 
-    <!-- PHOTO ARCHIVE -->
-
-    <div class="window-box photo-box">
-
-      <div class="window-title">
-
-        <h3>PHOTO ARCHIVE</h3>
-
-        <div class="window-controls">
-          <span>_</span>
-          <span>□</span>
-          <span>×</span>
-        </div>
-
-      </div>
-
-      <img
-        src="memory-photo.jpg"
-        class="memory-photo-large"
-      >
-
-      <p class="photo-caption">
-        Signal image stored.
-      </p>
-
-    </div>
-
-
     <!-- LAST SIGNAL -->
 
     <div class="window-box">
@@ -253,9 +236,7 @@
 
       <p>
         Status :
-        <span id="signalStatus">
-          Waiting...
-        </span>
+        <span id="signalStatus">Waiting...</span>
       </p>
 
       <button onclick="playSignal()">
@@ -280,11 +261,7 @@
         <div class="window-controls">
           <span>_</span>
           <span>□</span>
-
-          <!-- SECRET開放 -->
-
           <span onclick="openSecret()">×</span>
-
         </div>
 
       </div>
@@ -311,12 +288,9 @@
     <h3>SECRET.LOG</h3>
 
     <div class="window-controls">
-
       <span>_</span>
       <span>□</span>
-
       <span onclick="closeSecret()">×</span>
-
     </div>
 
   </div>
@@ -342,11 +316,8 @@
 <div class="taskbar">
 
   <span>● Receiving...</span>
-
   <span>● Synchronizing...</span>
-
   <span>● Waiting for response...</span>
-
   <span id="task-clock">00:00</span>
 
 </div>

@@ -459,7 +459,8 @@ button:hover{
 /* MESSAGE RECOVERY */
 
 .recovery-box{
-  width:140px !important;
+  .recovery-box{
+  width:180px !important;
   margin-left:0 !important;
   margin-top:0 !important;
 }

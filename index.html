@@ -577,7 +577,16 @@ const messages = [
 ];
 
 function recoverMessage(){
-  alert("動いた");
+
+  const msg =
+    messages[
+      Math.floor(
+        Math.random() *
+        messages.length
+      )
+    ];
+
+  document.getElementById("messageText").textContent = msg;
 }
 
 </script>

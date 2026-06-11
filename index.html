@@ -118,20 +118,18 @@
       </div>
 
       <!-- MESSAGE RECOVERY -->
-      <div class="window-box recovery-box">
-        <div class="window-title">
-          <h3>MESSAGE RECOVERY</h3>
+      <<div class="window-box recovery-box">
+  <div class="window-title">
+    <h3>MESSAGE</h3>
+    <div class="window-controls">
+      <span>_</span><span>□</span><span>×</span>
+    </div>
+  </div>
 
-          <div class="window-controls">
-            <span>_</span>
-            <span>□</span>
-            <span>×</span>
-          </div>
-        </div>
+  <p id="recovery-message">応答待機中...</p>
 
-        <p id="messageText">
-          ...
-        </p>
+  <button id="recover-button" type="button">RECOVER</button>
+</div>
 
         <button type="button" id="recoverButton">
           ▶ RECOVER
@@ -386,35 +384,28 @@ function closeSecret(){
 
 
 /* MESSAGE RECOVERY */
-const recoveredMessages = [
-  "500億年生きる",
-  "これ海藻なんだけど",
-  "個体928を検出",
-  "ずっとここにいるから",
-  "応答待機中",
-  "今日も楽しかった",
-  "また後で記録します",
-  "ずっと大好きだよ",
-  "観測を継続してください",
-  "接続状態は良好です",
-  "何も忘れたくない",
-  "信号が不安定です",
-  "思い出せない",
-  "████████",
-  "また明日。"
-];
+<script>
+  const recoveryMessages = [
+    "個体928を検出",
+    "ずっとここにいるから",
+    "応答待機中",
+    "今日も楽しかった",
+    "また後で記録します",
+    "ずっと大好きだよ",
+    "何も忘れたくない",
+    "また明日",
+    "████████",
+    "500億年生きる",
+    "これ海藻なんだけど"
+  ];
 
-const recoverButton = document.getElementById("recoverButton");
-const messageText = document.getElementById("messageText");
+  const recoverButton = document.getElementById("recover-button");
+  const recoveryMessage = document.getElementById("recovery-message");
 
-recoverButton.addEventListener("click", function(){
-  const msg =
-    recoveredMessages[
-      Math.floor(Math.random() * recoveredMessages.length)
-    ];
-
-  messageText.textContent = msg;
-});
+  recoverButton.addEventListener("click", function(){
+    const randomIndex = Math.floor(Math.random() * recoveryMessages.length);
+    recoveryMessage.textContent = recoveryMessages[randomIndex];
+  });
 </script>
 
 </body>

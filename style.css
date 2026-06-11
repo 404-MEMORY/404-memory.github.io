@@ -141,19 +141,6 @@ h1{
   padding-top:60px;
 
   
-}.sidebar{
-  width:150px;
-  flex-shrink:0;
-}
-
-.main{
-  width:520px;
-  flex-shrink:0;
-}
-
-.right-panel{
-  width:420px;
-  flex-shrink:0;
 }
 
 /* ウィンドウ共通 */

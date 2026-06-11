@@ -8,6 +8,7 @@ body{
   background-attachment:fixed;
   color:#c8d6ff;
   font-family:'DotGothic16',sans-serif;
+  overflow-x:auto;
 }
 
 /* 全体レイアウト */

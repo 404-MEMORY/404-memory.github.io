@@ -119,19 +119,22 @@
 
       <!-- MESSAGE RECOVERY -->
       <<div class="window-box recovery-box">
+  <div<div class="window-box recovery-box">
   <div class="window-title">
-    <h3>MESSAGE</h3>
+    <h3>MESSAGE RECOVERY</h3>
     <div class="window-controls">
-      <span>_</span><span>□</span><span>×</span>
+      <span>_</span>
+      <span>□</span>
+      <span>×</span>
     </div>
   </div>
 
-  <p id="recovery-message">応答待機中...</p>
+  <p id="messageText">応答待機中...</p>
 
-  <button id="recover-button" type="button">RECOVER</button>
+  <button type="button" onclick="recoverMessage()">
+    ▶ RECOVER
+  </button>
 </div>
-
-        <button type="button" id="recoverButton">
           ▶ RECOVER
         </button>
       </div>
@@ -385,7 +388,8 @@ function closeSecret(){
 
 /* MESSAGE RECOVERY */
 <script>
-  const recoveryMessages = [
+function recoverMessage(){
+  const messages = [
     "個体928を検出",
     "ずっとここにいるから",
     "応答待機中",
@@ -399,13 +403,12 @@ function closeSecret(){
     "これ海藻なんだけど"
   ];
 
-  const recoverButton = document.getElementById("recover-button");
-  const recoveryMessage = document.getElementById("recovery-message");
+  const messageText = document.getElementById("messageText");
 
-  recoverButton.addEventListener("click", function(){
-    const randomIndex = Math.floor(Math.random() * recoveryMessages.length);
-    recoveryMessage.textContent = recoveryMessages[randomIndex];
-  });
+  const randomIndex = Math.floor(Math.random() * messages.length);
+
+  messageText.innerText = messages[randomIndex];
+}
 </script>
 
 </body>

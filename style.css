@@ -512,8 +512,8 @@ button:hover{
 
 .cloud {
   position: absolute;
-  width: 170px;
-  height: 45px;
+  width:260px;
+  height: 60px;
   background: rgba(80, 120, 220, .22);
   border-radius: 50px;
   filter: blur(.3px);

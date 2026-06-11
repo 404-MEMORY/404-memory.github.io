@@ -381,7 +381,7 @@ function closeSecret(){
 
 
 /* MESSAGE RECOVERY */
-<script>
+/* MESSAGE RECOVERY */
 function recoverMessage(){
   const messages = [
     "個体928を検出",
@@ -398,7 +398,6 @@ function recoverMessage(){
   ];
 
   const messageText = document.getElementById("messageText");
-
   const randomIndex = Math.floor(Math.random() * messages.length);
 
   messageText.innerText = messages[randomIndex];

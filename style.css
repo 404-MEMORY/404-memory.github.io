@@ -405,10 +405,12 @@ button:hover{
 @media screen and (max-width:600px){
 
   .desktop{
-    grid-template-columns:115px 330px 260px;
-    gap:18px;
-    padding:70px 20px 70px;
-  }
+  display:grid;
+  grid-template-columns:115px 330px 260px;
+  gap:18px;
+  padding:70px 20px 70px;
+  width:max-content;
+}
 
   .sidebar a{
     font-size:14px;

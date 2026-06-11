@@ -117,21 +117,19 @@ h1{
   color:#8feaff;
 }
 
-
 /* 下段 */
 
 .bottom-row{
   display:grid;
-  grid-template-columns:180px 160px 160px;
+  grid-template-columns:180px 160px 180px;
   gap:15px;
   align-items:start;
 }
 
-/* PHOTO と VISITOR の高さを揃える */
-
 .bottom-row .window-box{
   height:210px;
 }
+
 /* 右パネル */
 
 .right-panel{
@@ -148,6 +146,7 @@ h1{
   background:rgba(0,0,40,.72);
   box-shadow:0 0 14px rgba(120,180,255,.45);
   color:#dce4ff;
+  overflow:hidden;
 }
 
 .window-title{
@@ -215,6 +214,15 @@ h1{
   width:100%;
 }
 
+.memory-photo-wide{
+  width:100%;
+  height:90px;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  border-bottom:1px solid #6f8cff;
+  filter:brightness(.9) contrast(1.1) saturate(.85) hue-rotate(8deg);
+}
 
 .photo-caption{
   margin:0;
@@ -223,6 +231,33 @@ h1{
   font-size:11px;
   color:#b9d7ff;
 }
+
+/* MESSAGE RECOVERY */
+
+.recovery-box{
+  width:180px;
+  height:210px;
+}
+
+.recovery-box p{
+  display:block !important;
+  min-height:58px !important;
+  padding:10px 12px !important;
+  margin:8px 0 !important;
+  font-size:12px !important;
+  line-height:1.6 !important;
+  color:#dce4ff !important;
+  opacity:1 !important;
+  visibility:visible !important;
+}
+
+.recovery-box button{
+  display:block;
+  margin:10px auto 0;
+  font-size:11px;
+  padding:6px 10px;
+}
+
 /* ボタン */
 
 button{
@@ -300,6 +335,40 @@ button:hover{
   line-height:1.9;
 }
 
+/* ハート */
+
+.heart-gauge{
+  margin-top:25px;
+  font-size:16px;
+  color:#bfc8ff;
+}
+
+.hearts{
+  margin-top:8px;
+  display:flex;
+  gap:8px;
+}
+
+.heart{
+  font-size:28px;
+  color:#8feaff;
+  text-shadow:0 0 8px #8feaff;
+}
+
+.heart.low{
+  animation:blinkHeart 1s infinite;
+}
+
+@keyframes blinkHeart{
+  0%,100%{
+    opacity:1;
+  }
+
+  50%{
+    opacity:.25;
+  }
+}
+
 /* 下タスクバー */
 
 .taskbar{
@@ -374,98 +443,29 @@ button:hover{
     font-size:28px !important;
   }
 
-
-  
-.secret-error{
-  position:relative;
-  top:-25px;
-  width:220px;
-  margin-top:20px;
-
-}
-
+  .secret-error{
+    position:relative;
+    top:-25px;
+    width:220px;
+    margin-top:20px;
+  }
 
   .taskbar{
     font-size:12px;
     gap:18px;
   }
 
-
-/* ハート */
-
-.heart-gauge{
-  margin-top:25px;
-  font-size:16px;
-  color:#bfc8ff;
-}
-
-.hearts{
-  margin-top:8px;
-  display:flex;
-  gap:8px;
-}
-
-.heart{
-  font-size:28px;
-  color:#8feaff;
-  text-shadow:0 0 8px #8feaff;
-}
-
-.heart.low{
-  animation:blinkHeart 1s infinite;
-}
-
-@keyframes blinkHeart{
-  0%,100%{
-    opacity:1;
+  .memory-photo-wide{
+    height:90px;
   }
 
-  50%{
-    opacity:.25;
-  }
-}
-
-.memory-photo-wide{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-  border-bottom:1px solid #6f8cff;
-  filter:brightness(.9) contrast(1.1) saturate(.85) hue-rotate(8deg);
-}
-
-/* PHOTO ARCHIVE 横長 */
-
-.memory-photo-wide{
-  width:100%;
-  height:90px;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-  border-bottom:1px solid #6f8cff;
-
-} 
-
-
-/* =========================
-   MESSAGE RECOVERY ウィンドウ
-   右下のメッセージ復元機能
-========================= */
-
-
-/* RECOVERED MESSAGE サイズ強制 */
-
-/* MESSAGE RECOVERY */
-
-.recovery-box{
   .recovery-box{
-  width:180px !important;
-  margin-left:0 !important;
-  margin-top:0 !important;
-}
+    width:180px !important;
+    height:210px !important;
+  }
 
-.recovery-box p{
-  min-height:50px !important;
-  font-size:12px !important;
+  .recovery-box p{
+    font-size:12px !important;
+    min-height:58px !important;
+  }
 }

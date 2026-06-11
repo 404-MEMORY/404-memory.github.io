@@ -534,3 +534,38 @@ button:hover{
   transform: scale(.7);
   opacity: .65;
 }
+
+.s5{
+  top:22%;
+  right:8%;
+  font-size:16px;
+  animation-delay:1.2s;
+}
+
+.s6{
+  top:42%;
+  right:6%;
+  font-size:20px;
+  animation-delay:0.5s;
+}
+
+.s7{
+  top:58%;
+  right:18%;
+  font-size:18px;
+  animation-delay:2s;
+}
+
+.s8{
+  top:76%;
+  right:10%;
+  font-size:15px;
+  animation-delay:1.8s;
+}
+
+.s9{
+  top:66%;
+  left:22%;
+  font-size:18px;
+  animation-delay:0.9s;
+}

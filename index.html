@@ -2,56 +2,31 @@
 <html lang="ja">
 
 <head>
-
-<!-- =========================
-     基本設定
-========================= -->
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ドットフォント -->
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <title>memory://archive</title>
-
-<!-- CSS読み込み -->
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<!-- =========================
-     全体レイアウト
-========================= -->
-
 <div class="desktop">
 
-  <!-- =========================
-       左メニュー
-  ========================= -->
-
+  <!-- 左メニュー -->
   <div class="sidebar">
-
     <a href="profile.html">♡<br>PROFILE</a>
     <a href="diary.html">▣<br>LOG</a>
     <a href="connection.html">⌁<br>CONNECTION</a>
     <a href="secret.html">☆<br>ARCHIVE</a>
-
   </div>
 
-
-  <!-- =========================
-       メイン画面
-  ========================= -->
-
+  <!-- メイン画面 -->
   <main class="main">
 
-    <!-- タイトル部分 -->
-
     <section class="hero">
-
       <h1>memory://archive</h1>
 
       <div class="status-line">
@@ -59,7 +34,6 @@
       </div>
 
       <div class="hero-content">
-
         <div class="hero-text">
           <p>
             Connected memories are<br>
@@ -72,14 +46,9 @@
         </div>
 
         <img src="rabbit.png" class="memory-rabbit">
-
       </div>
 
-
-      <!-- システム情報 -->
-
       <div class="system-row">
-
         <div>
           <span>SYSTEM CLOCK</span>
           <strong id="clock">00:00:00</strong>
@@ -94,14 +63,9 @@
           <span>STATUS</span>
           <strong>ACTIVE</strong>
         </div>
-
       </div>
 
-
-      <!-- ハートゲージ -->
-
       <div class="heart-gauge">
-
         <span>MEMORY HP</span>
 
         <div class="hearts">
@@ -109,25 +73,15 @@
           <span class="heart full">♥</span>
           <span class="heart low">♥</span>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =========================
-         下段ウィンドウ
-         PHOTO ARCHIVE / VISITOR LOG
-    ========================= -->
-
+    <!-- 下段ウィンドウ -->
     <section class="bottom-row">
 
       <!-- PHOTO ARCHIVE -->
-
       <div class="window-box photo-box">
-
         <div class="window-title">
-
           <h3>PHOTO ARCHIVE</h3>
 
           <div class="window-controls">
@@ -135,7 +89,6 @@
             <span>□</span>
             <span>×</span>
           </div>
-
         </div>
 
         <img src="memory-photo.jpg" class="memory-photo-wide">
@@ -143,16 +96,11 @@
         <p class="photo-caption">
           Signal image stored.
         </p>
-
       </div>
 
-
       <!-- VISITOR LOG -->
-
       <div class="window-box visitor">
-
         <div class="window-title">
-
           <h3>VISITOR LOG</h3>
 
           <div class="window-controls">
@@ -160,7 +108,6 @@
             <span>□</span>
             <span>×</span>
           </div>
-
         </div>
 
         <p class="count">00000001</p>
@@ -168,48 +115,39 @@
         <p>
           Last signal still received.
         </p>
-
       </div>
- <!-- MESSAGE RECOVERY -->         
-<div class="window-box recovery-box">
 
-  <div class="window-title">
-    <h3>MESSAGE RECOVERY</h3>
+      <!-- MESSAGE RECOVERY -->
+      <div class="window-box recovery-box">
+        <div class="window-title">
+          <h3>MESSAGE RECOVERY</h3>
 
-    <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span>×</span>
-    </div>
-  </div>
+          <div class="window-controls">
+            <span>_</span>
+            <span>□</span>
+            <span>×</span>
+          </div>
+        </div>
 
-  <p id="messageText">
-    ...
-  </p>
+        <p id="messageText">
+          ...
+        </p>
 
-  <button onclick="recoverMessage()">
-    ▶ RECOVER
-  </button>
+        <button type="button" id="recoverButton">
+          ▶ RECOVER
+        </button>
+      </div>
 
-</div>
     </section>
 
   </main>
 
-
-  <!-- =========================
-       右サイドウィンドウ群
-       LINK STATUS / LAST SIGNAL / ERROR
-  ========================= -->
-
+  <!-- 右サイドウィンドウ -->
   <aside class="right-panel">
 
     <!-- LINK STATUS -->
-
     <div class="window-box">
-
       <div class="window-title">
-
         <h3>LINK STATUS</h3>
 
         <div class="window-controls">
@@ -217,7 +155,6 @@
           <span>□</span>
           <span>×</span>
         </div>
-
       </div>
 
       <p>
@@ -233,16 +170,11 @@
       <div class="separator"></div>
 
       <p>404 MEMORY</p>
-
     </div>
 
-
     <!-- LAST SIGNAL -->
-
     <div class="window-box">
-
       <div class="window-title">
-
         <h3>LAST SIGNAL</h3>
 
         <div class="window-controls">
@@ -250,7 +182,6 @@
           <span>□</span>
           <span>×</span>
         </div>
-
       </div>
 
       <p>memory.mp3</p>
@@ -260,23 +191,18 @@
         <span id="signalStatus">Waiting...</span>
       </p>
 
-      <button onclick="playSignal()">
+      <button type="button" onclick="playSignal()">
         ▶ RECEIVE SIGNAL
       </button>
 
       <audio id="signalAudio">
         <source src="memory.mp3" type="audio/mpeg">
       </audio>
-
     </div>
 
-
     <!-- SECRET入口 -->
-
     <div id="errorWindow" class="secret-error">
-
       <div class="window-title">
-
         <h3>ERROR.LOG</h3>
 
         <div class="window-controls">
@@ -284,22 +210,18 @@
           <span>□</span>
           <span onclick="openSecret()">×</span>
         </div>
-
       </div>
 
       <p>ERROR : hidden file detected.</p>
-
       <p>Click × to close.</p>
-
     </div>
 
   </aside>
 
 </div>
+
 <!-- WARNINGウィンドウ -->
-
 <div id="warningWindow" class="secret-window">
-
   <div class="window-title">
     <h3>WARNING</h3>
 
@@ -311,19 +233,15 @@
   </div>
 
   <p>閲覧制限のあるファイルを検出しました。</p>
-<p>認証を開始しますか？</p>
+  <p>認証を開始しますか？</p>
 
-  <button onclick="openPassword()">
+  <button type="button" onclick="openPassword()">
     YES
   </button>
-
 </div>
 
-
 <!-- PASSWORDウィンドウ -->
-
 <div id="passwordWindow" class="secret-window">
-
   <div class="window-title">
     <h3>PASSWORD</h3>
 
@@ -339,20 +257,14 @@
 
   <input type="password" id="secretPassword" placeholder="PASSWORD">
 
-  <button onclick="checkPassword()">
+  <button type="button" onclick="checkPassword()">
     ACCESS
   </button>
-
 </div>
 
-<!-- =========================
-     SECRETウィンドウ
-========================= -->
-
+<!-- SECRETウィンドウ -->
 <div id="secretWindow" class="secret-window">
-
   <div class="window-title">
-
     <h3>SECRET.LOG</h3>
 
     <div class="window-controls">
@@ -360,55 +272,39 @@
       <span>□</span>
       <span onclick="closeSecret()">×</span>
     </div>
-
   </div>
-    <p>閲覧権限を確認しました。</p>
-<p>
-保護記録へのアクセスを許可します。<br>
-接続を開始します。
-</p>
+
+  <p>閲覧権限を確認しました。</p>
+
+  <p>
+    保護記録へのアクセスを許可します。<br>
+    接続を開始します。
+  </p>
 
   <a href="letter.html" class="secret-link">
     OPEN LETTER →
   </a>
-
 </div>
 
-
-<!-- =========================
-     下部タスクバー
-========================= -->
-
+<!-- 下部タスクバー -->
 <div class="taskbar">
-
   <span>● Receiving...</span>
   <span>● Synchronizing...</span>
   <span>● Waiting for response...</span>
   <span id="task-clock">00:00</span>
-
 </div>
 
-
-<!-- =========================
-     JavaScript
-========================= -->
-
 <script>
-
 /* 時計更新 */
 function updateClock(){
-
   const now = new Date();
 
   const h = String(now.getHours()).padStart(2,"0");
   const m = String(now.getMinutes()).padStart(2,"0");
   const s = String(now.getSeconds()).padStart(2,"0");
 
-  document.getElementById("clock").textContent =
-    `${h}:${m}:${s}`;
-
-  document.getElementById("task-clock").textContent =
-    `${h}:${m}`;
+  document.getElementById("clock").textContent = `${h}:${m}:${s}`;
+  document.getElementById("task-clock").textContent = `${h}:${m}`;
 }
 
 setInterval(updateClock,1000);
@@ -417,178 +313,108 @@ updateClock();
 
 /* 経過日数計算 */
 const start = new Date("2022-09-20");
-
 const today = new Date();
+const diff = Math.floor((today - start) / (1000*60*60*24));
 
-const diff =
-  Math.floor(
-    (today-start) /
-    (1000*60*60*24)
-  );
-
-document.getElementById("days").textContent =
-  diff;
+document.getElementById("days").textContent = diff;
 
 
 /* 音声再生 */
 function playSignal(){
+  const audio = document.getElementById("signalAudio");
+  const status = document.getElementById("signalStatus");
 
-  const audio =
-    document.getElementById("signalAudio");
-
-  const status =
-    document.getElementById("signalStatus");
-
-  status.textContent =
-    "Receiving...";
+  status.textContent = "Receiving...";
 
   audio.play();
 
   setTimeout(function(){
-
-    status.textContent =
-      "Connected";
-
+    status.textContent = "Connected";
   },3000);
 }
 
 
 /* 世界終了タイマー */
 const worldEnd = new Date();
-
-worldEnd.setFullYear(
-  worldEnd.getFullYear()+500
-);
+worldEnd.setFullYear(worldEnd.getFullYear() + 500);
 
 function updateWorldTimer(){
-
   const now = new Date();
+  const diff = worldEnd - now;
+  const days = Math.floor(diff / (1000*60*60*24));
 
-  const diff =
-    worldEnd-now;
-
-  const days =
-    Math.floor(
-      diff /
-      (1000*60*60*24)
-    );
-
-  document.getElementById("endDays").textContent =
-    days.toLocaleString();
+  document.getElementById("endDays").textContent = days.toLocaleString();
 }
 
 updateWorldTimer();
-
-setInterval(
-  updateWorldTimer,
-  1000
-);
+setInterval(updateWorldTimer,1000);
 
 
-/* SECRET開く */
+/* SECRET認証 */
 function openSecret(){
-
-  document.getElementById("errorWindow")
-    .style.display = "none";
-
-  document.getElementById("warningWindow")
-    .style.display = "block";
+  document.getElementById("errorWindow").style.display = "none";
+  document.getElementById("warningWindow").style.display = "block";
 }
-
-/* SECRET閉じる */
 
 function closeWarning(){
   document.getElementById("warningWindow").style.display = "none";
 }
 
 function openPassword(){
-
-  document.getElementById("warningWindow")
-    .style.display = "none";
-
-  document.getElementById("passwordWindow")
-    .style.display = "block";
+  document.getElementById("warningWindow").style.display = "none";
+  document.getElementById("passwordWindow").style.display = "block";
 }
 
 function closePassword(){
-
-  document.getElementById("passwordWindow")
-    .style.display = "none";
+  document.getElementById("passwordWindow").style.display = "none";
 }
 
 function checkPassword(){
-
-  const pass =
-    document.getElementById("secretPassword").value;
+  const pass = document.getElementById("secretPassword").value;
 
   if(pass === "928"){
-
-    document.getElementById("passwordWindow")
-      .style.display = "none";
-
-    document.getElementById("secretWindow")
-      .style.display = "block";
-
+    document.getElementById("passwordWindow").style.display = "none";
+    document.getElementById("secretWindow").style.display = "block";
   }else{
-
     alert("ACCESS DENIED");
   }
 }
 
-     /* 復元されたメッセージ */
 function closeSecret(){
-
-  document.getElementById("secretWindow")
-    .style.display = "none";
+  document.getElementById("secretWindow").style.display = "none";
 }
-const messages = [
 
 
-"500億年生きる",
-
-"これ海藻なんだけど",
-
-"個体928を検出",
-
-"ずっとここにいるから",
-
-"応答待機中",
-
-"今日も楽しかった",
-
-"また後で記録します",
-
-"ずっと大好きだよ",
-
-"観測を継続してください",
-
-"接続状態は良好です",
-
-"何も忘れたくない",
-
-"信号が不安定です",
-
-"思い出せない",
-
-"████████",
-
-"また明日。"
-
+/* MESSAGE RECOVERY */
+const recoveredMessages = [
+  "500億年生きる",
+  "これ海藻なんだけど",
+  "個体928を検出",
+  "ずっとここにいるから",
+  "応答待機中",
+  "今日も楽しかった",
+  "また後で記録します",
+  "ずっと大好きだよ",
+  "観測を継続してください",
+  "接続状態は良好です",
+  "何も忘れたくない",
+  "信号が不安定です",
+  "思い出せない",
+  "████████",
+  "また明日。"
 ];
 
-function recoverMessage(){
+const recoverButton = document.getElementById("recoverButton");
+const messageText = document.getElementById("messageText");
 
+recoverButton.addEventListener("click", function(){
   const msg =
-    messages[
-      Math.floor(
-        Math.random() *
-        messages.length
-      )
+    recoveredMessages[
+      Math.floor(Math.random() * recoveredMessages.length)
     ];
 
-  document.getElementById("messageText").textContent = msg;
-}
-
+  messageText.textContent = msg;
+});
 </script>
 
 </body>

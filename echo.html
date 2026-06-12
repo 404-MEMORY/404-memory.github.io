@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
+<div class="letter-content">
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 説明枠 -->
 
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
-<title>ECHO</title>
-
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body class="letter-page">
-
-<div class="letter-box">
-
-  <div class="window-title">
-    <h3>ECHO</h3>
-
-    <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span>×</span>
-    </div>
-  </div>
-
-  <div class="letter-content">
+  <div class="echo-intro">
 
     <p>
       受信した信号の残響を保存しています。
@@ -58,55 +34,38 @@
       どうか色褪せませんように。
     </p>
 
-    <div class="separator"></div>
+  </div>
 
-    <!-- ===================== -->
-    <!-- 新しいECHOはこの下に追加 -->
-    <!-- ===================== -->
+  <!-- ===================== -->
+  <!-- 新しいECHOはこの下に追加 -->
+  <!-- ===================== -->
 
-    <!-- ECHO NO.001 -->
+  <div class="echo-card">
 
-    <h3>ECHO NO.001</h3>
-
-    <p>
-      DATE : 2026.06.12
+    <p class="echo-title">
+      ECHO NO.001
     </p>
 
-    <p>
-      SOURCE : TL
+    <p class="echo-date">
+      2026.06.12
     </p>
 
-    <div class="separator"></div>
+    <div class="bubble left">
+      これ海藻なんだけど
+    </div>
 
-    <p>
-      928 :
-    </p>
+    <div class="bubble right">
+      何言ってんだろうこいつ
+    </div>
 
-    <p>
-      「これ海藻なんだけど」
-    </p>
-
-    <div class="separator"></div>
-
-    <p>
+    <p class="echo-status">
       STATUS : STORED
     </p>
 
-    <!-- ECHO END -->
-
-    <div class="separator"></div>
-
-    <a href="archive.html">← RETURN</a>
-
   </div>
 
+  <div class="separator"></div>
+
+  <a href="archive.html">← RETURN</a>
+
 </div>
-
-<script>
-if(sessionStorage.getItem("archiveAccess") !== "granted"){
-  location.href = "index.html";
-}
-</script>
-
-</body>
-</html>

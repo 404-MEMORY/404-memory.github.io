@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+<title>AUTHORIZATION REQUIRED</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="letter-page">
+
+<div class="letter-box">
+
+  <div class="window-title">
+    <h3>AUTHORIZATION</h3>
+
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span>×</span>
+    </div>
+  </div>
+
+  <div class="letter-content">
+
+    <p>
+      ENCRYPTED ARCHIVE DETECTED
+    </p>
+
+    <p>
+      個体識別コードを入力してください
+    </p>
+
+    <input
+      type="password"
+      id="sitePassword"
+      placeholder="PASSWORD">
+
+    <br><br>
+
+    <button type="button"
+            onclick="unlockSite()">
+      ACCESS
+    </button>
+
+    <p id="accessStatus"></p>
+
+  </div>
+
+</div>
+
+<script>
+
+function unlockSite(){
+
+  const password =
+    document.getElementById("sitePassword").value;
+
+  const status =
+    document.getElementById("accessStatus");
+
+  if(password === "920"){
+
+    status.textContent =
+      "ACCESS GRANTED";
+
+    setTimeout(function(){
+
+      location.href =
+        "archive.html";
+
+    },800);
+
+  }else{
+
+    status.textContent =
+      "ACCESS DENIED";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,71 +1,82 @@
-<div class="letter-content">
+<!DOCTYPE html>
+<html lang="ja">
 
-  <!-- 説明枠 -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="echo-intro">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
-    <p>
-      受信した信号の残響を保存しています。
-    </p>
+<title>ECHO</title>
 
-    <p>
-      一部記録は破損しています。
-    </p>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="letter-page">
+
+<div class="letter-box">
+
+  <div class="window-title">
+    <h3>ECHO</h3>
+
+    <div class="window-controls">
+      <span>_</span>
+      <span>□</span>
+      <span>×</span>
+    </div>
+  </div>
+
+  <div class="letter-content">
+
+    <div class="echo-intro">
+
+      <p>受信した信号の残響を保存しています。</p>
+      <p>一部記録は破損しています。</p>
+
+      <div class="separator"></div>
+
+      <p>忘れたくないと思った言葉達。</p>
+      <p>君が僕にくれたもの。</p>
+      <p>僕の宝物。</p>
+      <p>反響して離れない音。</p>
+      <p>どうか色褪せませんように。</p>
+
+    </div>
+
+    <!-- ===================== -->
+    <!-- 新しいECHOはこの下に追加 -->
+    <!-- ===================== -->
+
+    <div class="echo-card">
+
+      <p class="echo-title">ECHO NO.001</p>
+      <p class="echo-date">2026.06.12</p>
+
+      <div class="bubble left">
+        これ海藻なんだけど
+      </div>
+
+      <div class="bubble right">
+        何言ってんだろうこいつ
+      </div>
+
+      <p class="echo-status">STATUS : STORED</p>
+
+    </div>
 
     <div class="separator"></div>
 
-    <p>
-      忘れたくないと思った言葉達。
-    </p>
-
-    <p>
-      君が僕にくれたもの。
-    </p>
-
-    <p>
-      僕の宝物。
-    </p>
-
-    <p>
-      反響して離れない音。
-    </p>
-
-    <p>
-      どうか色褪せませんように。
-    </p>
+    <a href="archive.html">← RETURN</a>
 
   </div>
-
-  <!-- ===================== -->
-  <!-- 新しいECHOはこの下に追加 -->
-  <!-- ===================== -->
-
-  <div class="echo-card">
-
-    <p class="echo-title">
-      ECHO NO.001
-    </p>
-
-    <p class="echo-date">
-      2026.06.12
-    </p>
-
-    <div class="bubble left">
-      これ海藻なんだけど
-    </div>
-
-    <div class="bubble right">
-      何言ってんだろうこいつ
-    </div>
-
-    <p class="echo-status">
-      STATUS : STORED
-    </p>
-
-  </div>
-
-  <div class="separator"></div>
-
-  <a href="archive.html">← RETURN</a>
 
 </div>
+
+<script>
+if(sessionStorage.getItem("archiveAccess") !== "granted"){
+  location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

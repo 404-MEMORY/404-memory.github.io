@@ -65,18 +65,22 @@ function unlockSite(){
 
   if(password === "920"){
 
-    status.textContent =
-      "ACCESS GRANTED";
+  sessionStorage.setItem(
+    "archiveAccess",
+    "granted"
+  );
 
-    setTimeout(function(){
+  status.textContent =
+    "ACCESS GRANTED";
 
-      location.href =
-        "archive.html";
+  setTimeout(function(){
 
-    },800);
+    location.href =
+      "archive.html";
 
-  }else{
+  },800);
 
+}else{
     status.textContent =
       "ACCESS DENIED";
 

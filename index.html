@@ -73,43 +73,46 @@ function unlockSite(){
   const status =
     document.getElementById("accessStatus");
 
-  if(password === "500"){
-
-  sessionStorage.setItem(
-    "archiveAccess",
-    "granted"
-  );
-
   const line =
     document.getElementById("glitchLine");
 
-  status.textContent =
-    "約□はまだ有効みたい。";
+  if(password === "500"){
 
-  line.textContent =
-    "███▒▒████▒▒███";
-
-  setTimeout(function(){
+    sessionStorage.setItem(
+      "archiveAccess",
+      "granted"
+    );
 
     status.textContent =
-      "約束はまだ有効みたい。";
+      "約□はまだ有効みたい。";
 
     line.textContent =
-      "────────────";
+      "███▒▒████▒▒███";
 
-  },400);
+    setTimeout(function(){
 
-  setTimeout(function(){
+      status.textContent =
+        "約束はまだ有効みたい。";
 
-    location.href =
-      "archive.html";
+      line.textContent =
+        "────────────";
 
-  },1200);
+    },400);
 
-}
-}else{
+    setTimeout(function(){
+
+      location.href =
+        "archive.html";
+
+    },1200);
+
+  }else{
+
     status.textContent =
-      "ACCESS DENIED";
+      "接続維持期間が一致しません。";
+
+    line.textContent =
+      "▒▒▒ ERROR ▒▒▒";
 
   }
 

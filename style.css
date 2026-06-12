@@ -611,14 +611,17 @@ button:hover{
   line-height:1.8;
 }
 
+
 .bubble.left{
   margin-right:auto;
-  background:#e7dcf2;
+  background:#ABD3D8 !important;
+  color:#24353A !important;
 }
 
 .bubble.right{
   margin-left:auto;
-  background:#dfeedd;
+  background:#ACA7BB !important;
+  color:#2E2938 !important;
 }
 
 .echo-status{
@@ -644,12 +647,12 @@ button:hover{
 }
 
 /* 右：吸血鬼の羽 */
-.bubble.left::before{
-  content:"🪽";
+.bubble.right::after{
+  content:"🦇";
   position:absolute;
-  left:-14px;
+  right:-14px;
   top:50%;
   transform:translateY(-50%);
-  color:#ABD3D8;
-  font-size:24px;
+  color:#ACA7BB;
+  font-size:22px;
 }

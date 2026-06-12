@@ -631,6 +631,10 @@ button:hover{
   position:relative;
 }
 
+body{
+  background:red !important;
+}
+
 /* 左：天使の羽 */
 .bubble.left::before{
   content:"໒꒱";

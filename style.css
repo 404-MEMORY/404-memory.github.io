@@ -614,14 +614,14 @@ button:hover{
 
 .bubble.left{
   margin-right:auto;
-  background:#ABD3D8 !important;
-  color:#24353A !important;
+  background:#ACA7BB;
+  color:#2E2938;
 }
 
 .bubble.right{
   margin-left:auto;
-  background:#ACA7BB !important;
-  color:#2E2938 !important;
+  background:#ABD3D8;
+  color:#24353A;
 }
 
 .echo-status{
@@ -632,25 +632,4 @@ button:hover{
 
 .bubble{
   position:relative;
-}
-
-
-/* 左：天使の羽 */
-.bubble.left::before{
-position:absolute;
-  left:-14px;
-  top:50%;
-  transform:translateY(-50%);
-  color:#ABD3D8;
-  font-size:24px;
-}
-
-/* 右：吸血鬼の羽 */
-.bubble.right::after{
-  position:absolute;
-  right:-14px;
-  top:50%;
-  transform:translateY(-50%);
-  color:#ACA7BB;
-  font-size:22px;
 }

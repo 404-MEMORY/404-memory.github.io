@@ -569,3 +569,60 @@ button:hover{
   font-size:18px;
   animation-delay:0.9s;
 }
+/* ========================= */
+/* ECHO PAGE */
+/* ========================= */
+
+.echo-intro{
+  padding:24px;
+  margin-bottom:30px;
+  border:1px solid rgba(180,220,255,.6);
+  background:rgba(255,255,255,.08);
+  box-shadow:0 0 15px rgba(150,220,255,.3);
+  text-align:center;
+}
+
+.echo-card{
+  padding:24px;
+  margin:30px 0;
+  border-radius:30px;
+  background:rgba(255,255,255,.9);
+  color:#666;
+  box-shadow:0 0 15px rgba(180,220,255,.3);
+}
+
+.echo-title{
+  text-align:center;
+  font-size:22px;
+  color:#444;
+}
+
+.echo-date{
+  text-align:center;
+  color:#888;
+  font-size:14px;
+}
+
+.bubble{
+  max-width:80%;
+  padding:14px 18px;
+  margin:15px 0;
+  border-radius:22px;
+  line-height:1.8;
+}
+
+.bubble.left{
+  margin-right:auto;
+  background:#e7dcf2;
+}
+
+.bubble.right{
+  margin-left:auto;
+  background:#dfeedd;
+}
+
+.echo-status{
+  text-align:center;
+  color:#888;
+  margin-top:20px;
+}

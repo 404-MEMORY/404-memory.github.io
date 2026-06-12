@@ -80,16 +80,33 @@ function unlockSite(){
     "granted"
   );
 
+  const line =
+    document.getElementById("glitchLine");
+
   status.textContent =
-    "ACCESS GRANTED";
+    "約□はまだ有効みたい。";
+
+  line.textContent =
+    "███▒▒████▒▒███";
+
+  setTimeout(function(){
+
+    status.textContent =
+      "約束はまだ有効みたい。";
+
+    line.textContent =
+      "────────────";
+
+  },400);
 
   setTimeout(function(){
 
     location.href =
       "archive.html";
 
-  },800);
+  },1200);
 
+}
 }else{
     status.textContent =
       "ACCESS DENIED";

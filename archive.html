@@ -422,5 +422,11 @@ function recoverMessage(){
 }
 </script>
 
+  <script>
+if(sessionStorage.getItem("archiveAccess") !== "granted"){
+  location.href = "index.html";
+}
+</script>
+
 </body>
 </html>

@@ -634,24 +634,22 @@ button:hover{
 
 /* 左：天使の羽 */
 .bubble.left::before{
-  content:"໒꒱";
+  content:"🪽";
   position:absolute;
-  left:-28px;
+  left:-14px;
   top:50%;
   transform:translateY(-50%);
-  color:#d8c8f0;
+  color:#ABD3D8;
   font-size:24px;
-  text-shadow:0 0 8px rgba(220,200,255,.8);
 }
 
 /* 右：吸血鬼の羽 */
-.bubble.right::after{
-  content:"⌁";
+.bubble.left::before{
+  content:"🪽";
   position:absolute;
-  right:-26px;
+  left:-14px;
   top:50%;
   transform:translateY(-50%);
-  color:#b8cbb0;
-  font-size:22px;
-  text-shadow:0 0 8px rgba(180,220,180,.8);
+  color:#ABD3D8;
+  font-size:24px;
 }

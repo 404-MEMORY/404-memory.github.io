@@ -661,3 +661,26 @@ button:hover{
   font-size:12px;
   text-shadow:0 0 6px #8feaff;
 }
+/* ========================= */
+/* SECRET LETTER DIARY */
+/* 日記カード用 */
+/* ========================= */
+
+.diary-entry{
+  margin:28px 0;
+  padding:22px;
+  border:1px solid rgba(180,220,255,.55);
+  background:rgba(255,255,255,.06);
+  box-shadow:0 0 14px rgba(150,220,255,.25);
+}
+
+.diary-to{
+  color:#ffb7e8;
+  font-size:15px;
+}
+
+.diary-date{
+  color:#8feaff;
+  font-size:14px;
+  letter-spacing:1px;
+}

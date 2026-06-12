@@ -648,3 +648,16 @@ button:hover{
   font-size:20px;
   color:#c8eaff;
 }
+/* ========================= */
+/* AUTHORIZATION */
+/* ========================= */
+
+.glitch-line{
+  height:16px;
+  margin-top:12px;
+  text-align:center;
+  color:#8feaff;
+  letter-spacing:2px;
+  font-size:12px;
+  text-shadow:0 0 6px #8feaff;
+}

@@ -339,5 +339,11 @@ setInterval(function(){
 }, 900);
 </script>
   
+  <script>
+if(sessionStorage.getItem("archiveAccess") !== "granted"){
+  location.href = "index.html";
+}
+</script>
+  
 </body>
 </html>

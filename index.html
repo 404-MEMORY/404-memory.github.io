@@ -28,26 +28,36 @@
   <div class="letter-content">
 
     <p>
-      ENCRYPTED ARCHIVE DETECTED
-    </p>
-
     <p>
-      個体識別コードを入力してください
-    </p>
+  閲覧権限を確認できません。
+</p>
 
-    <input
-      type="password"
-      id="sitePassword"
-      placeholder="PASSWORD">
+<p>
+  接続維持期間を入力してください。
+</p>
 
-    <br><br>
+<br>
 
-    <button type="button"
-            onclick="unlockSite()">
-      ACCESS
-    </button>
+<div class="password-row">
 
-    <p id="accessStatus"></p>
+  <input
+    type="password"
+    id="sitePassword"
+    placeholder="">
+
+  <span class="password-unit">
+    億年
+  </span>
+
+</div>
+
+<br>
+
+<button type="button" onclick="unlockSite()">
+  ACCESS
+</button>
+
+<p id="accessStatus"></p>
 
   </div>
 

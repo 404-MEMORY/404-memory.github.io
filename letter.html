@@ -107,6 +107,13 @@ Connection is stable.
 <br>
 
 <a href="index.html">← HOME</a>
-
+  
+<script>
+if(sessionStorage.getItem("archiveAccess") !== "granted"){
+  location.href = "index.html";
+}
+</script>
+  
 </body>
+  
 </html>

@@ -4,290 +4,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-
 <title>ECHO</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  background:#05080c;
+  color:#cfeaff;
+  font-family:'DotGothic16',sans-serif;
+  background-image:
+    linear-gradient(rgba(120,220,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120,220,255,.04) 1px, transparent 1px);
+  background-size:24px 24px;
+}
+
+.echo-page{
+  max-width:760px;
+  margin:0 auto;
+  padding:34px 18px 60px;
+}
+
+.echo-header{
+  border-bottom:1px solid rgba(180,230,255,.35);
+  padding-bottom:18px;
+  margin-bottom:30px;
+}
+
+.echo-header h1{
+  margin:0;
+  font-size:32px;
+  letter-spacing:3px;
+  color:#d8f3ff;
+  text-shadow:0 0 10px #72dfff;
+}
+
+.echo-intro{
+  margin:24px 0 34px;
+  padding:22px;
+  border:1px solid rgba(170,220,255,.35);
+  background:rgba(10,18,28,.72);
+  box-shadow:0 0 18px rgba(100,200,255,.15);
+  text-align:center;
+  line-height:2;
+}
+
+.echo-card{
+  margin:32px 0;
+  padding:24px;
+  border:1px solid rgba(170,220,255,.35);
+  border-radius:10px;
+  background:rgba(8,12,18,.88);
+  box-shadow:0 0 18px rgba(120,220,255,.12);
+}
+
+.echo-title{
+  font-size:24px;
+  letter-spacing:3px;
+  margin:0 0 8px;
+  color:#d8f3ff;
+}
+
+.echo-date{
+  margin:0 0 24px;
+  color:#93a8b8;
+}
+
+.bubble{
+  max-width:78%;
+  width:fit-content;
+  padding:12px 16px;
+  margin:14px 0;
+  border-radius:10px;
+  line-height:1.8;
+  box-shadow:0 0 12px rgba(120,220,255,.12);
+}
+
+.bubble.left{
+  margin-right:auto;
+  background:rgba(172,167,187,.22);
+  border:1px solid rgba(172,167,187,.7);
+  color:#e8e4f2;
+}
+
+.bubble.right{
+  margin-left:auto;
+  background:rgba(171,211,216,.22);
+  border:1px solid rgba(171,211,216,.8);
+  color:#e7fbff;
+}
+
+.echo-omit{
+  text-align:center;
+  margin:22px 0;
+  color:#7f91a0;
+  letter-spacing:3px;
+  font-size:13px;
+}
+
+.reply-box{
+  margin-top:22px;
+  padding:20px;
+  border:1px solid rgba(143,234,255,.35);
+  background:rgba(8,18,28,.85);
+  box-shadow:0 0 14px rgba(143,234,255,.12);
+}
+
+.reply-title{
+  margin:0 0 10px;
+  font-size:20px;
+  color:#8feaff;
+  letter-spacing:2px;
+}
+
+.reply-date{
+  color:#93a8b8;
+  font-size:13px;
+}
+
+.separator{
+  border-top:1px dashed rgba(180,230,255,.35);
+  margin:28px 0;
+}
+
+.return-link{
+  color:#8feaff;
+  text-decoration:none;
+}
+</style>
 </head>
 
-<body class="letter-page">
+<body>
 
-<div class="letter-box">
+<div class="echo-page">
 
-  <div class="window-title">
-    <h3>ECHO</h3>
-
-    <div class="window-controls">
-      <span>_</span>
-      <span>□</span>
-      <span>×</span>
-    </div>
+  <div class="echo-header">
+    <h1>ECHO</h1>
   </div>
 
-  <div class="letter-content">
+  <div class="echo-intro">
+    <p>受信した信号の残響を保存しています。</p>
+    <p>一部記録は破損しています。</p>
 
-    <div class="echo-intro">
+    <div class="separator"></div>
 
-      <p>受信した信号の残響を保存しています。</p>
-      <p>一部記録は破損しています。</p>
-
-      <div class="separator"></div>
-
-      <p>忘れたくないと思った言葉達。</p>
-      <p>君が僕にくれたもの。</p>
-      <p>僕の宝物。</p>
-      <p>反響して離れない音。</p>
-      <p>どうか色褪せませんように。</p>
-
-    </div>
-
-    <!-- ===================== -->
-    <!-- 新しいECHOはこの下に追加 -->
-    <!-- ===================== -->
-<div class="echo-card">
-
-  <p class="echo-title">ECHO NO.002</p>
-  <p class="echo-date">2026.06.18</p>
-
-  <div class="bubble right">
-    だいすき
+    <p>忘れたくないと思った言葉達。</p>
+    <p>君が僕にくれたもの。</p>
+    <p>僕の宝物。</p>
+    <p>反響して離れない音。</p>
+    <p>どうか色褪せませんように。</p>
   </div>
 
-  <div class="bubble left">
-    きょう
-  </div>
-
-  <div class="bubble left">
-    みえたつききれいだたよ
-  </div>
-
-  <p class="echo-omit">
-  ── 中略 ──
-</p>
-
-  <div class="bubble left">
-    さっきのつきは
-  </div>
-
-  <div class="bubble left">
-    なつめそうせき
-  </div>
-
-  <div class="bubble left">
-    おやしみ
-  </div>
-
-  <div class="bubble right">
-    なんで言い逃げばっかするんですか~？
-  </div>
-
-</div>
-
-<div class="separator"></div>
-    
-     <div class="echo-card">
-
-      <p class="echo-title">ECHO NO.001</p>
-      <p class="echo-date">2026.06.12</p>
-
-  
-      <div class="bubble right">
-       だいすき
-      </div>
-      <div class="bubble right">
-       お前も僕が大好き
-      </div>
-    <div class="bubble left">
-      うるさーーーーーーい
-       </div>
-    </div>
-<div class="echo-card">
-
-  <p class="echo-title">ECHO NO.000</p>
-  <p class="echo-date">2024.05.07</p>
-
-  <div class="bubble left">
-    ちがいます〜
-  </div>
-
-  <div class="bubble left">
-    おまえと生きるんだよ
-  </div>
-
-  <div class="bubble left">
-    遊ばなかったら死ぬんですか〜
-  </div>
-
-</div>
-
-<div class="separator"></div>
-    
-    <div class="echo-card">
-
-   <p class="echo-title">ECHO NO.000</p>
-      <p class="echo-date">2024.04.21</p>
-
-  
-      <div class="bubble right">
-      さいきんあまやかされすぎ
-      </div>
-    <div class="bubble left">
-      きのせいでぶ
-       </div>
-   <div class="bubble left">
-       ？
-      </div>
-<div class="bubble right">
-      僕のことでぶっていった？
-      </div>
- <div class="bubble left">
-       誤字っちゃい
-      </div>
-    </div>
-    <div class="echo-card">
-
-  <p class="echo-title">ECHO NO.000</p>
-  <p class="echo-date">2024.04.06</p>
-
-  <div class="bubble left">
-    俺のかわいいエピソードきいて
-  </div>
-
-  <div class="bubble right">
-    きく
-  </div>
-
-  <div class="bubble left">
-    ねむかったんだけど<br>
-    最初寝付けなくて
-  </div>
-
-  <div class="bubble right">
-    うん
-  </div>
-
-  <div class="bubble left">
-    黒うさぎ握りしめて寝たら<br>
-    安眠通り越して朝だった
-  </div>
-
-  <div class="bubble left">
-    おわり
-  </div>
-
-</div>
-
-<div class="separator"></div>
-    
-    <div class="echo-card">
-         <p class="echo-title">ECHO NO.000</p>
-      <p class="echo-date">2023.04.26</p>
-
-  
-      <div class="bubble right">
-       アンパンマンチョコだよ〜ってしたい
-      </div>
-    <div class="bubble left">
-      うまいんだからなあんぱんまんみょこ
-       </div>
-  <div class="bubble right">
-       みょこ
-      </div>
-    </div>
-
-    <div class="echo-card">
-
-      <p class="echo-title">ECHO NO.000</p>
-      <p class="echo-date">2023.02.20</p>
-
-    
-
-      <div class="bubble right">
-    ん、あったまりなあ。おやすみ。 好きだよ、葛葉。
-また明日。ゆっくり休めよ
-      </div>
-    <div class="bubble left">
-      どうやら俺は愛してるらしいよ ぽやかなえ
-       </div>
-
-    </div>
-
-    <div class="echo-card">
-
-  <p class="echo-title">ECHO NO.000</p>
-  <p class="echo-date">2023.01.27</p>
-
-  <div class="bubble right">
-    すき、くずは
-  </div>
-
-  <div class="bubble left">
-    おきたらおこしてえ
-  </div>
-
-  <div class="bubble right">
-    おこす
-  </div>
-
-  <div class="bubble left">
-    ふふん、すき
-  </div>
-
-</div>
-
-<div class="separator"></div>
+  <!-- 新しいECHOはこの下に追加 -->
 
   <div class="echo-card">
 
-  <p class="echo-title">ECHO NO.000</p>
-  <p class="echo-date">2023.01.10</p>
+    <p class="echo-title">ECHO NO.000</p>
+    <p class="echo-date">2023.XX.XX</p>
 
-  <div class="bubble right">
-    葛葉は？
+    <div class="bubble right">
+      だいすき
+    </div>
+
+    <div class="bubble left">
+      きょう
+    </div>
+
+    <div class="bubble left">
+      みえたつききれいだたよ
+    </div>
+
+    <p class="echo-omit">── 中略 ──</p>
+
+    <div class="bubble left">
+      さっきのつきは
+    </div>
+
+    <div class="bubble left">
+      なつめそうせき
+    </div>
+
+    <div class="bubble left">
+      おやしみ
+    </div>
+
+    <div class="bubble right">
+      なんで言い逃げばっかするんですか~？
+    </div>
+
+    <div class="reply-box">
+      <p class="reply-title">928 REPLY</p>
+      <p class="reply-date">FROM : 928</p>
+
+      <p>
+        ここに928のコメントを書く。
+      </p>
+    </div>
+
   </div>
 
-  <div class="bubble left">
-    おまえより好きなもの？
-  </div>
+  <div class="separator"></div>
 
-  <div class="bubble right">
-    好きの語彙、<br>
-    好きって言葉を使わずに<br>
-    僕への気持ちを表現してみましょう
-  </div>
-
-  <div class="bubble left">
-    いいの？
-  </div>
-
-  <div class="bubble left">
-    多分俺もおまえも溶けるけど
-  </div>
-
-  <div class="bubble left">
-    愛してんよ
-  </div>
+  <a class="return-link" href="archive.html">← RETURN</a>
 
 </div>
 
-<div class="separator"></div>
-
-  <p class="echo-status">
-    STATUS : STORED
-  </p>
-
-</div>
-<div class="separator"></div>
-
-    <a href="archive.html">← RETURN</a>
-
-  </div>
-
-</div>
-  
-<div class="separator"></div>
 <script>
 if(sessionStorage.getItem("archiveAccess") !== "granted"){
   location.href = "index.html";

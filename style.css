@@ -707,25 +707,3 @@ input{
 
 }
 
-/* フォルダメニュー位置調整 */
-.sidebar{
-  padding-top:95px !important;
-}
-
-.sidebar a.folder-tab{
-  margin-bottom:18px !important;
-}
-/* フォルダメニューを画面左に固定 */
-.sidebar{
-  position:fixed !important;
-  top:120px !important;
-  left:18px !important;
-  width:76px !important;
-  padding-top:0 !important;
-  z-index:20 !important;
-}
-
-/* メインがフォルダと重ならないようにする */
-.desktop{
-  padding-left:120px !important;
-}

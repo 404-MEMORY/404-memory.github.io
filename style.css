@@ -706,3 +706,12 @@ input{
   }
 
 }
+
+/* フォルダメニュー位置調整 */
+.sidebar{
+  padding-top:95px !important;
+}
+
+.sidebar a.folder-tab{
+  margin-bottom:18px !important;
+}

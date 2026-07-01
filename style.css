@@ -3,17 +3,13 @@ body,
   margin:0;
   min-height:100vh;
   background-color:#fffdfb;
-
   background-image:
     linear-gradient(rgba(80,180,220,.45) 2px, transparent 2px),
     linear-gradient(90deg, rgba(80,180,220,.45) 2px, transparent 2px);
-
   background-size:40px 40px;
-
   color:#1f3f5f;
   font-family:'DotGothic16',sans-serif;
 }
-
 
 /* 全体レイアウト */
 
@@ -26,24 +22,65 @@ body,
 }
 
 .sidebar{
-  border-right:1px solid rgba(140,160,255,.5);
-  padding-top:10px;
+  width:80px;
+  border-right:none !important;
+  padding-top:20px;
+  flex-shrink:0;
 }
 
-.sidebar a{
-  display:block;
-  margin:0 0 28px;
-  color:#d8ddff;
+/* フォルダ画像メニュー */
+
+.sidebar a.folder-tab{
+  position:relative !important;
+  display:block !important;
+  width:70px !important;
+  height:58px !important;
+  margin:0 0 14px !important;
+  padding:0 !important;
+  background:none !important;
+  border:none !important;
+  box-shadow:none !important;
+  text-decoration:none !important;
+  text-shadow:none !important;
+}
+
+.sidebar a.folder-tab::before{
+  display:none !important;
+  content:none !important;
+}
+
+.folder-tab img{
+  width:70px !important;
+  height:auto !important;
+  display:block !important;
+}
+
+.folder-icon{
+  position:absolute;
+  top:17px;
+  left:0;
+  width:70px;
   text-align:center;
-  text-decoration:none;
-  font-size:18px;
-  text-shadow:0 0 8px #8097ff;
+  font-size:10px;
+  color:#1f3f5f;
+}
+
+.folder-text{
+  position:absolute;
+  bottom:8px;
+  left:0;
+  width:70px;
+  text-align:center;
+  font-size:8px;
+  color:#2264a8;
 }
 
 /* メイン */
 
 .main{
   min-width:0;
+  width:520px;
+  flex-shrink:0;
 }
 
 .hero{
@@ -53,17 +90,18 @@ body,
 h1{
   font-size:42px;
   letter-spacing:3px;
-  color:#e6ecff;
-  text-shadow:0 0 10px #7eeaff;
+  color:#2264a8;
+  text-shadow:none;
 }
 
 .status-line{
   display:inline-block;
   padding:10px 20px;
   border:2px solid #7c84ff;
-  color:#e6ecff;
+  color:#2264a8;
   font-size:22px;
   margin:15px 0;
+  background:rgba(255,255,255,.55);
 }
 
 .online{
@@ -105,7 +143,7 @@ h1{
 .system-row{
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
-  border-top:1px dashed #7687ff;
+  border-top:2px dashed #62b7dc;
   margin-top:40px;
   padding-top:25px;
   gap:20px;
@@ -113,7 +151,7 @@ h1{
 
 .system-row span{
   display:block;
-  color:#bfc8ff;
+  color:#6f8fb0;
 }
 
 .system-row strong{
@@ -143,20 +181,25 @@ h1{
   flex-direction:column;
   gap:25px;
   padding-top:40px;
-
-  
+  width:420px;
+  flex-shrink:0;
 }
-
-
-
 
 /* ウィンドウ共通 */
 
+.window-box,
+.letter-box,
+.report-box,
+.diary-entry,
+.echo-card,
+.echo-intro{
+  background:rgba(255,255,255,.92) !important;
+  color:#1f3f5f !important;
+  border:3px solid #2264a8 !important;
+  box-shadow:6px 6px 0 rgba(34,100,168,.35) !important;
+}
+
 .window-box{
-  border:2px solid #6f8cff;
-  background:rgba(0,0,40,.72);
-  box-shadow:0 0 14px rgba(120,180,255,.45);
-  color:#dce4ff;
   overflow:hidden;
 }
 
@@ -165,12 +208,14 @@ h1{
   justify-content:space-between;
   align-items:center;
   padding:8px 10px;
-  background:linear-gradient(90deg,#6f8cff,#9bb7ff);
+  background:#2b6fbd !important;
+  color:white !important;
+  border-bottom:3px solid #174b83 !important;
 }
 
 .window-title h3{
   margin:0;
-  color:white;
+  color:white !important;
   font-size:16px;
   letter-spacing:2px;
 }
@@ -186,11 +231,11 @@ h1{
   display:flex;
   align-items:center;
   justify-content:center;
-  border:1px solid #ffffff;
-  color:#ffffff;
+  background:#ffffff !important;
+  color:#2b6fbd !important;
+  border:2px solid #2b6fbd !important;
   font-size:9px;
   line-height:1;
-  background:rgba(255,255,255,.18);
 }
 
 .window-box p{
@@ -200,7 +245,7 @@ h1{
 }
 
 .separator{
-  border-top:1px dashed #6f8cff;
+  border-top:2px dashed #62b7dc !important;
   margin:12px 0;
 }
 
@@ -240,21 +285,10 @@ h1{
   padding:6px 10px;
   text-align:center;
   font-size:11px;
-  color:#b9d7ff;
+  color:#6f8fb0;
 }
 
 /* MESSAGE RECOVERY */
-
-.bottom-row{
-  display:grid;
-  grid-template-columns:180px 160px 180px;
-  gap:15px;
-  align-items:start;
-}
-
-.bottom-row .window-box{
-  height:210px;
-}
 
 .recovery-box{
   width:180px;
@@ -268,7 +302,7 @@ h1{
   min-height:55px;
   font-size:12px;
   line-height:1.6;
-  color:#dce4ff;
+  color:#1f3f5f;
 }
 
 .recovery-box button{
@@ -280,30 +314,46 @@ h1{
 
 /* ボタン */
 
-button{
-  background:#001133;
-  color:#8eeeff;
-  border:1px solid #6f8cff;
+button,
+.recovery-box button,
+.right-panel button{
+  background:#ffffff !important;
+  color:#2264a8 !important;
+  border:3px solid #2264a8 !important;
   padding:8px 14px;
   font-family:'DotGothic16',sans-serif;
   cursor:pointer;
-  box-shadow:0 0 10px rgba(120,180,255,.4);
+  box-shadow:4px 4px 0 rgba(34,100,168,.35) !important;
 }
 
-button:hover{
-  background:#002255;
-  box-shadow:0 0 20px rgba(120,180,255,.8);
+button:hover,
+.recovery-box button:hover,
+.right-panel button:hover{
+  background:#dff6ff !important;
+  color:#174b83 !important;
+  box-shadow:4px 4px 0 rgba(34,100,168,.55) !important;
+}
+
+input{
+  background:#ffffff !important;
+  color:#1f3f5f !important;
+  border:3px solid #2264a8 !important;
 }
 
 /* SECRET */
+
+.secret-error,
+.secret-window{
+  background:rgba(255,255,255,.95) !important;
+  color:#1f3f5f !important;
+  border:3px solid #2264a8 !important;
+  box-shadow:6px 6px 0 rgba(34,100,168,.35) !important;
+}
 
 .secret-error{
   position:relative;
   width:100%;
   margin-top:20px;
-  border:2px solid #6f8cff;
-  background:rgba(0,0,40,.85);
-  box-shadow:0 0 14px rgba(120,180,255,.55);
 }
 
 .secret-window{
@@ -312,42 +362,27 @@ button:hover{
   right:60px;
   bottom:110px;
   width:360px;
-  border:2px solid #ff9bdc;
-  background:rgba(20,0,40,.9);
-  box-shadow:0 0 18px rgba(255,150,220,.65);
   z-index:30;
 }
 
 .secret-error p,
 .secret-window p{
   padding:0 16px;
+  color:#1f3f5f !important;
 }
 
 .secret-link{
   display:block;
   margin:15px;
-  color:#ff9bdc;
+  color:#2264a8 !important;
   text-decoration:none;
 }
 
 /* LETTER PAGE */
 
-.letter-page{
-  min-height:100vh;
-  background-image:url("bg2.png");
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-  color:#c8eaff;
-  font-family:'DotGothic16',sans-serif;
-}
-
 .letter-box{
   max-width:650px;
   margin:80px auto;
-  border:2px solid #ff9bdc;
-  background:rgba(20,0,40,.85);
-  box-shadow:0 0 25px rgba(255,150,220,.55);
 }
 
 .letter-content{
@@ -360,7 +395,7 @@ button:hover{
 .heart-gauge{
   margin-top:25px;
   font-size:16px;
-  color:#bfc8ff;
+  color:#6f8fb0;
 }
 
 .hearts{
@@ -380,13 +415,8 @@ button:hover{
 }
 
 @keyframes blinkHeart{
-  0%,100%{
-    opacity:1;
-  }
-
-  50%{
-    opacity:.25;
-  }
+  0%,100%{ opacity:1; }
+  50%{ opacity:.25; }
 }
 
 /* 下タスクバー */
@@ -411,20 +441,204 @@ button:hover{
   font-size:22px;
 }
 
+/* 空デコ */
+
+.sky-deco{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+  overflow:hidden;
+}
+
+.star{
+  position:absolute;
+  color:#c8b7ff;
+  text-shadow:0 0 8px #8db7ff;
+  font-size:22px;
+  animation:twinkle 2.8s infinite ease-in-out;
+}
+
+.s1{ top:18%; right:18%; }
+.s2{ top:31%; right:34%; font-size:18px; animation-delay:.8s; }
+.s3{ top:47%; right:12%; font-size:26px; animation-delay:1.4s; }
+.s4{ top:68%; left:8%; color:#9aa8ff; animation-delay:.4s; }
+.s5{ top:22%; right:8%; font-size:16px; animation-delay:1.2s; }
+.s6{ top:42%; right:6%; font-size:20px; animation-delay:.5s; }
+.s7{ top:58%; right:18%; font-size:18px; animation-delay:2s; }
+.s8{ top:76%; right:10%; font-size:15px; animation-delay:1.8s; }
+.s9{ top:66%; left:22%; font-size:18px; animation-delay:.9s; }
+
+@keyframes twinkle{
+  0%,100%{ opacity:.35; transform:scale(.9); }
+  50%{ opacity:1; transform:scale(1.15); }
+}
+
+.cloud{
+  position:absolute;
+  width:260px;
+  height:60px;
+  background:rgba(80,120,220,.22);
+  border-radius:50px;
+  filter:blur(.3px);
+  box-shadow:
+    35px -18px 0 rgba(80,120,220,.18),
+    75px -10px 0 rgba(120,140,255,.16),
+    105px 8px 0 rgba(70,100,200,.15);
+}
+
+.c1{
+  right:-20px;
+  bottom:17%;
+}
+
+.c2{
+  left:-40px;
+  bottom:8%;
+  transform:scale(.7);
+  opacity:.65;
+}
+
+/* ECHO PAGE */
+
+.echo-intro{
+  padding:24px;
+  margin-bottom:30px;
+  text-align:center;
+}
+
+.echo-card{
+  padding:24px;
+  margin:30px 0;
+  border-radius:30px;
+}
+
+.echo-title{
+  text-align:center;
+  font-size:22px;
+  color:#2264a8 !important;
+}
+
+.echo-date{
+  text-align:center;
+  color:#888;
+  font-size:14px;
+}
+
+.bubble{
+  position:relative;
+  max-width:80%;
+  padding:14px 18px;
+  margin:15px 0;
+  border-radius:22px;
+  line-height:1.8;
+}
+
+.bubble.left{
+  margin-right:auto;
+  background:#ACA7BB !important;
+  border:2px solid #7f7893 !important;
+  color:#2e2938 !important;
+}
+
+.bubble.right{
+  margin-left:auto;
+  background:#ABD3D8 !important;
+  border:2px solid #72aeb6 !important;
+  color:#24353a !important;
+}
+
+.echo-status{
+  text-align:center;
+  color:#888;
+  margin-top:20px;
+}
+
+.echo-omit{
+  text-align:center;
+  margin:16px 0;
+  opacity:.6;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+/* AUTHORIZATION */
+
+.password-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+.password-unit{
+  font-size:20px;
+  color:#2264a8;
+}
+
+.glitch-line{
+  height:16px;
+  margin-top:12px;
+  text-align:center;
+  color:#2264a8;
+  letter-spacing:2px;
+  font-size:12px;
+  text-shadow:none;
+}
+
+/* SECRET LETTER DIARY */
+
+.diary-entry{
+  margin:28px 0;
+  padding:22px;
+}
+
+.diary-to{
+  color:#ff7dbd;
+  font-size:15px;
+}
+
+.diary-date,
+.report-head,
+.report-title{
+  color:#2264a8 !important;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
 /* スマホ調整 */
 
 @media screen and (max-width:600px){
 
   .desktop{
-    grid-template-columns:115px 330px 260px;
     gap:18px;
     padding:70px 20px 70px;
   }
 
-}
+  .sidebar{
+    width:76px !important;
+  }
 
-  .sidebar a{
-    font-size:14px;
+  .sidebar a.folder-tab{
+    width:66px !important;
+    height:55px !important;
+    margin-bottom:12px !important;
+  }
+
+  .folder-tab img{
+    width:66px !important;
+  }
+
+  .folder-icon{
+    width:66px;
+    top:16px;
+    font-size:9px;
+  }
+
+  .folder-text{
+    width:66px;
+    bottom:8px;
+    font-size:7px;
   }
 
   .hero{
@@ -490,388 +704,5 @@ button:hover{
     font-size:12px !important;
     min-height:58px !important;
   }
-}
-.sky-deco {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
 
-.star {
-  position: absolute;
-  color: #c8b7ff;
-  text-shadow: 0 0 8px #8db7ff;
-  font-size: 22px;
-  animation: twinkle 2.8s infinite ease-in-out;
-}
-
-.s1 { top: 18%; right: 18%; }
-.s2 { top: 31%; right: 34%; font-size: 18px; animation-delay: .8s; }
-.s3 { top: 47%; right: 12%; font-size: 26px; animation-delay: 1.4s; }
-.s4 { top: 68%; left: 8%; color: #9aa8ff; animation-delay: .4s; }
-
-@keyframes twinkle {
-  0%, 100% { opacity: .35; transform: scale(.9); }
-  50% { opacity: 1; transform: scale(1.15); }
-}
-
-.cloud {
-  position: absolute;
-  width:260px;
-  height: 60px;
-  background: rgba(80, 120, 220, .22);
-  border-radius: 50px;
-  filter: blur(.3px);
-  box-shadow:
-    35px -18px 0 rgba(80, 120, 220, .18),
-    75px -10px 0 rgba(120, 140, 255, .16),
-    105px 8px 0 rgba(70, 100, 200, .15);
-}
-
-.c1 {
-  right: -20px;
-  bottom: 17%;
-}
-
-.c2 {
-  left: -40px;
-  bottom: 8%;
-  transform: scale(.7);
-  opacity: .65;
-}
-
-.s5{
-  top:22%;
-  right:8%;
-  font-size:16px;
-  animation-delay:1.2s;
-}
-
-.s6{
-  top:42%;
-  right:6%;
-  font-size:20px;
-  animation-delay:0.5s;
-}
-
-.s7{
-  top:58%;
-  right:18%;
-  font-size:18px;
-  animation-delay:2s;
-}
-
-.s8{
-  top:76%;
-  right:10%;
-  font-size:15px;
-  animation-delay:1.8s;
-}
-
-.s9{
-  top:66%;
-  left:22%;
-  font-size:18px;
-  animation-delay:0.9s;
-}
-/* ========================= */
-/* ECHO PAGE */
-/* ========================= */
-
-.echo-intro{
-  padding:24px;
-  margin-bottom:30px;
-  border:1px solid rgba(180,220,255,.6);
-  background:rgba(255,255,255,.08);
-  box-shadow:0 0 15px rgba(150,220,255,.3);
-  text-align:center;
-}
-
-.echo-card{
-  padding:24px;
-  margin:30px 0;
-  border-radius:30px;
-  background:rgba(255,255,255,.9);
-  color:#666;
-  box-shadow:0 0 15px rgba(180,220,255,.3);
-}
-
-.echo-title{
-  text-align:center;
-  font-size:22px;
-  color:#444;
-}
-
-.echo-date{
-  text-align:center;
-  color:#888;
-  font-size:14px;
-}
-
-.bubble{
-  max-width:80%;
-  padding:14px 18px;
-  margin:15px 0;
-  border-radius:22px;
-  line-height:1.8;
-}
-
-
-.bubble.left{
-  margin-right:auto;
-  background:#ACA7BB;
-  color:#2E2938;
-}
-
-.bubble.right{
-  margin-left:auto;
-  background:#ABD3D8;
-  color:#24353A;
-}
-
-.echo-status{
-  text-align:center;
-  color:#888;
-  margin-top:20px;
-}
-
-.bubble{
-  position:relative;
-}
-
-.password-row{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-}
-
-.password-unit{
-  font-size:20px;
-  color:#c8eaff;
-}
-/* ========================= */
-/* AUTHORIZATION */
-/* ========================= */
-
-.glitch-line{
-  height:16px;
-  margin-top:12px;
-  text-align:center;
-  color:#8feaff;
-  letter-spacing:2px;
-  font-size:12px;
-  text-shadow:0 0 6px #8feaff;
-}
-/* ========================= */
-/* SECRET LETTER DIARY */
-/* 日記カード用 */
-/* ========================= */
-
-.diary-entry{
-  margin:28px 0;
-  padding:22px;
-  border:1px solid rgba(180,220,255,.55);
-  background:rgba(255,255,255,.06);
-  box-shadow:0 0 14px rgba(150,220,255,.25);
-}
-
-.diary-to{
-  color:#ffb7e8;
-  font-size:15px;
-}
-
-.diary-date{
-  color:#8feaff;
-  font-size:14px;
-  letter-spacing:1px;
-}
-
-/* ========================= */
-/* WHITE GRID THEME */
-/* 全ページ共通：白背景×水色グリッド */
-/* ========================= */
-
-.window-box,
-.letter-box,
-.report-box,
-.diary-entry,
-.echo-card,
-.echo-intro{
-  background:rgba(255,255,255,.92) !important;
-  color:#1f3f5f !important;
-  border:3px solid #2264a8 !important;
-  box-shadow:6px 6px 0 rgba(34,100,168,.35) !important;
-}
-
-.window-title{
-  background:#2b6fbd !important;
-  color:white !important;
-  border-bottom:3px solid #174b83 !important;
-}
-
-.window-title h3{
-  color:white !important;
-}
-
-.window-controls span{
-  background:#ffffff !important;
-  color:#2b6fbd !important;
-  border:2px solid #2b6fbd !important;
-}
-
-.separator{
-  border-top:2px dashed #62b7dc !important;
-}
-
-a,
-.sidebar a,
-.return-link{
-  color:#2264a8 !important;
-  text-shadow:none !important;
-}
-
-h1,
-.echo-title,
-.diary-date,
-.report-head,
-.report-title{
-  color:#2264a8 !important;
-  text-shadow:none !important;
-}
-
-.bubble.left{
-  background:#ACA7BB !important;
-  border:2px solid #7f7893 !important;
-  color:#2e2938 !important;
-}
-
-.bubble.right{
-  background:#ABD3D8 !important;
-  border:2px solid #72aeb6 !important;
-  color:#24353a !important;
-}
-
-/* ========================= */
-/* WHITE GRID THEME FIX */
-/* ERROR / BUTTON 色調整 */
-/* ========================= */
-
-.secret-error,
-.secret-window{
-  background:rgba(255,255,255,.95) !important;
-  color:#1f3f5f !important;
-  border:3px solid #2264a8 !important;
-  box-shadow:6px 6px 0 rgba(34,100,168,.35) !important;
-}
-
-.secret-error p,
-.secret-window p{
-  color:#1f3f5f !important;
-}
-
-.secret-link{
-  color:#2264a8 !important;
-}
-
-button,
-.recovery-box button,
-.right-panel button{
-  background:#ffffff !important;
-  color:#2264a8 !important;
-  border:3px solid #2264a8 !important;
-  box-shadow:4px 4px 0 rgba(34,100,168,.35) !important;
-}
-
-button:hover,
-.recovery-box button:hover,
-.right-panel button:hover{
-  background:#dff6ff !important;
-  color:#174b83 !important;
-  box-shadow:4px 4px 0 rgba(34,100,168,.55) !important;
-}
-
-input{
-  background:#ffffff !important;
-  color:#1f3f5f !important;
-  border:3px solid #2264a8 !important;
-}
-/* ========================= */
-/* FOLDER TAB SIDEBAR */
-/* 左メニューをフォルダ風にする */
-/* ========================= */
-
-.sidebar{
-  border-right:none !important;
-  padding-top:20px;
-}
-
-.sidebar a{
-  position:relative;
-  display:block;
-  width:120px;
-  margin:0 0 18px;
-  padding:18px 10px 12px;
-  background:#f6dfb8;
-  color:#1f3f5f !important;
-  border:3px solid #111;
-  border-radius:0 8px 8px 0;
-  text-align:center;
-  text-decoration:none;
-  font-size:13px;
-  text-shadow:none !important;
-  box-shadow:4px 4px 0 rgba(0,0,0,.18);
-}
-
-/* フォルダの上タブ部分 */
-.sidebar a::before{
-  content:"";
-  position:absolute;
-  top:-14px;
-  left:-3px;
-  width:62px;
-  height:16px;
-  background:#f6dfb8;
-  border:3px solid #111;
-  border-bottom:none;
-  border-radius:6px 6px 0 0;
-}
-
-/* ほんのり光 */
-.sidebar a:hover{
-  background:#fff1cf;
-  transform:translateX(4px);
-}
-.folder-tab{
-  position:relative;
-  display:block;
-  width:95px;
-  margin-bottom:16px;
-}
-
-.folder-tab img{
-  width:95px;
-  display:block;
-}
-
-.folder-icon{
-  position:absolute;
-  top:18px;
-  left:0;
-  width:95px;
-  text-align:center;
-  font-size:16px;
-  color:#1f3f5f;
-}
-
-.folder-text{
-  position:absolute;
-  bottom:16px;
-  left:0;
-  width:95px;
-  text-align:center;
-  font-size:12px;
-  color:#2264a8;
 }

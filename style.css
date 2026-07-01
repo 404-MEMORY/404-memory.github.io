@@ -706,4 +706,11 @@ input{
   }
 
 }
+/* 左メニューを左に寄せる */
+.desktop{
+  padding-left:18px !important;
+}
 
+.sidebar{
+  width:80px !important;
+}

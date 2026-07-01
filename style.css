@@ -685,3 +685,68 @@ button:hover{
   font-size:14px;
   letter-spacing:1px;
 }
+
+/* ========================= */
+/* WHITE GRID THEME */
+/* 全ページ共通：白背景×水色グリッド */
+/* ========================= */
+
+.window-box,
+.letter-box,
+.report-box,
+.diary-entry,
+.echo-card,
+.echo-intro{
+  background:rgba(255,255,255,.92) !important;
+  color:#1f3f5f !important;
+  border:3px solid #2264a8 !important;
+  box-shadow:6px 6px 0 rgba(34,100,168,.35) !important;
+}
+
+.window-title{
+  background:#2b6fbd !important;
+  color:white !important;
+  border-bottom:3px solid #174b83 !important;
+}
+
+.window-title h3{
+  color:white !important;
+}
+
+.window-controls span{
+  background:#ffffff !important;
+  color:#2b6fbd !important;
+  border:2px solid #2b6fbd !important;
+}
+
+.separator{
+  border-top:2px dashed #62b7dc !important;
+}
+
+a,
+.sidebar a,
+.return-link{
+  color:#2264a8 !important;
+  text-shadow:none !important;
+}
+
+h1,
+.echo-title,
+.diary-date,
+.report-head,
+.report-title{
+  color:#2264a8 !important;
+  text-shadow:none !important;
+}
+
+.bubble.left{
+  background:#ACA7BB !important;
+  border:2px solid #7f7893 !important;
+  color:#2e2938 !important;
+}
+
+.bubble.right{
+  background:#ABD3D8 !important;
+  border:2px solid #72aeb6 !important;
+  color:#24353a !important;
+}

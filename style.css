@@ -714,3 +714,22 @@ input{
 .sidebar{
   width:80px !important;
 }
+/* ========================= */
+/* MOBILE LAYOUT FINAL FIX */
+/* スマホで全体を上に詰める */
+/* ========================= */
+
+@media screen and (max-width:600px){
+
+  .desktop{
+    padding-top:10px !important;
+    padding-left:20px !important;
+    padding-right:20px !important;
+    padding-bottom:70px !important;
+  }
+
+  .hero{
+    padding-top:0 !important;
+  }
+
+}

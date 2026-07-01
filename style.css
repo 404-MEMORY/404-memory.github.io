@@ -844,3 +844,18 @@ input{
   background:#fff1cf;
   transform:translateX(4px);
 }
+
+.sidebar a{
+    display:block;
+    margin:12px 0;
+}
+
+.sidebar img{
+    width:82px;
+    display:block;
+    transition:.2s;
+}
+
+.sidebar img:hover{
+    transform:translateX(6px);
+}

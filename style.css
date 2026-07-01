@@ -750,3 +750,48 @@ h1,
   border:2px solid #72aeb6 !important;
   color:#24353a !important;
 }
+
+/* ========================= */
+/* WHITE GRID THEME FIX */
+/* ERROR / BUTTON 色調整 */
+/* ========================= */
+
+.secret-error,
+.secret-window{
+  background:rgba(255,255,255,.95) !important;
+  color:#1f3f5f !important;
+  border:3px solid #2264a8 !important;
+  box-shadow:6px 6px 0 rgba(34,100,168,.35) !important;
+}
+
+.secret-error p,
+.secret-window p{
+  color:#1f3f5f !important;
+}
+
+.secret-link{
+  color:#2264a8 !important;
+}
+
+button,
+.recovery-box button,
+.right-panel button{
+  background:#ffffff !important;
+  color:#2264a8 !important;
+  border:3px solid #2264a8 !important;
+  box-shadow:4px 4px 0 rgba(34,100,168,.35) !important;
+}
+
+button:hover,
+.recovery-box button:hover,
+.right-panel button:hover{
+  background:#dff6ff !important;
+  color:#174b83 !important;
+  box-shadow:4px 4px 0 rgba(34,100,168,.55) !important;
+}
+
+input{
+  background:#ffffff !important;
+  color:#1f3f5f !important;
+  border:3px solid #2264a8 !important;
+}

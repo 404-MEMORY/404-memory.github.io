@@ -707,3 +707,58 @@ input{
     min-height:58px !important;
   }
 }
+.signal-form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.signal-form label{
+  color:#2264a8;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.signal-form input,
+.signal-form textarea{
+  font-family:'DotGothic16',sans-serif;
+  padding:10px;
+  background:#fff;
+  border:3px solid #2264a8;
+  color:#1f3f5f;
+}
+
+.signal-form textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+.signal-status{
+  margin:18px 0;
+  padding:14px;
+  background:rgba(255,255,255,.7);
+  border:2px dashed #62b7dc;
+  color:#2264a8;
+  font-family:'DotGothic16',sans-serif;
+  white-space:pre-wrap;
+}
+
+.signal-card{
+  margin:22px 0;
+  padding:18px;
+  background:rgba(255,255,255,.9);
+  border:3px solid #2264a8;
+  box-shadow:5px 5px 0 rgba(34,100,168,.28);
+}
+
+.signal-title{
+  color:#2264a8;
+  font-size:18px;
+  margin:0 0 6px;
+}
+
+.signal-date,
+.signal-from{
+  color:#6f8fb0;
+  font-size:13px;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGNAL</title>
+<link rel="stylesheet" href="style.css?v=8">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body class="letter-page">
+
+<div class="letter-box">
+  <div class="window-title">
+    <h3>SIGNAL TERMINAL</h3>
+    <div class="window-controls">
+      <span>_</span><span>□</span><span>×</span>
+    </div>
+  </div>
+
+  <div class="letter-content">
+    <p>受信した信号を保存します。</p>
+    <p>ここに残された通信は、このページに表示されます。</p>
+
+    <div class="separator"></div>
+
+    <form id="commentForm" class="signal-form">
+      <label>CALL SIGN</label>
+      <input id="nameInput" type="text" maxlength="30" placeholder="928">
+
+      <label>TRANSMISSION</label>
+      <textarea id="messageInput" maxlength="1000" required placeholder="ここに信号を書く"></textarea>
+
+      <button type="submit">▶ SEND SIGNAL</button>
+    </form>
+
+    <pre id="signalStatus" class="signal-status">Waiting for signal...</pre>
+
+    <div class="separator"></div>
+
+    <h3>SIGNAL ARCHIVE</h3>
+    <div id="commentList"></div>
+
+    <div class="separator"></div>
+    <a href="archive.html">← RETURN</a>
+  </div>
+</div>
+
+<script>
+const SUPABASE_URL = "https://fuwtekxneeiahrbhpoqt.supabase.co";
+const SUPABASE_KEY = "sb_publishable_eOKH9F8jFSksICnRzMq-9g_Paux3wj3";
+
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+const form = document.getElementById("commentForm");
+const nameInput = document.getElementById("nameInput");
+const messageInput = document.getElementById("messageInput");
+const statusBox = document.getElementById("signalStatus");
+const commentList = document.getElementById("commentList");
+
+function wait(ms){
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function signalAnimation(){
+  statusBox.textContent = "Connecting...\n\n■■□□□□□□□";
+  await wait(650);
+
+  statusBox.textContent = "Synchronizing...\n\n■■■■■■□□□";
+  await wait(650);
+
+  statusBox.textContent = "Saving...\n\n■■■■■■■■■";
+  await wait(650);
+
+  statusBox.textContent = "Signal Stored.\n\nSTATUS : STORED";
+}
+
+function escapeHtml(text){
+  return String(text)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function formatDate(value){
+  return new Date(value).toLocaleString("ja-JP");
+}
+
+async function loadComments(){
+  const { data, error } = await db
+    .from("comments")
+    .select("*")
+    .eq("page", "signal")
+    .order("created_at", { ascending:false });
+
+  if(error){
+    commentList.innerHTML = "<p>SIGNAL LOST.</p>";
+    return;
+  }
+
+  commentList.innerHTML = data.map(comment => `
+    <div class="signal-card">
+      <p class="signal-title">SIGNAL NO.${String(comment.id).padStart(3,"0")}</p>
+      <p class="signal-date">${formatDate(comment.created_at)}</p>
+      <p class="signal-from">FROM : ${escapeHtml(comment.name || "Anonymous")}</p>
+      <div class="separator"></div>
+      <p>${escapeHtml(comment.message).replaceAll("\n","<br>")}</p>
+    </div>
+  `).join("");
+}
+
+form.addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const name = nameInput.value.trim() || "Anonymous";
+  const message = messageInput.value.trim();
+
+  if(!message){
+    statusBox.textContent = "SIGNAL EMPTY.";
+    return;
+  }
+
+  const { error } = await db
+    .from("comments")
+    .insert({
+      page: "signal",
+      name: name,
+      message: message
+    });
+
+  if(error){
+    statusBox.textContent = "SIGNAL LOST.\n" + error.message;
+    return;
+  }
+
+  await signalAnimation();
+  form.reset();
+  await loadComments();
+});
+
+loadComments();
+</script>
+
+<script>
+if(sessionStorage.getItem("archiveAccess") !== "granted"){
+  location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

@@ -1124,3 +1124,34 @@ font-size:12px;
 white-space:pre-wrap;
 
 }
+
+@media screen and (max-width:600px){
+  .cyber-reply-box{
+    padding:16px;
+    margin-top:28px;
+    clip-path:none;
+  }
+
+  .reply-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .reply-form input,
+  .reply-form textarea,
+  .reply-form button{
+    width:100%;
+    box-sizing:border-box;
+  }
+
+  .reply-card{
+    clip-path:none;
+    padding:16px;
+  }
+
+  .cyber-header{
+    font-size:12px;
+    padding:6px 12px;
+  }
+}

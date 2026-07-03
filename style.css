@@ -763,395 +763,204 @@ input{
   font-size:13px;
 }
 
-/* ========================= */
-/* DIARY REPLY */
-/* ========================= */
-
-.diary-reply-box{
-  margin-top:30px;
-  padding:20px;
-  border:3px solid #2264a8;
-  background:rgba(255,255,255,.92);
-  box-shadow:5px 5px 0 rgba(34,100,168,.25);
-}
-
-.reply-title{
-  color:#2264a8;
-  margin-bottom:15px;
-  letter-spacing:2px;
-}
-
-.reply-list{
-  margin-bottom:20px;
-}
-
-.reply-card{
-  padding:14px;
-  margin:12px 0;
-  border:2px dashed #62b7dc;
-  background:white;
-}
-
-.reply-from{
-  color:#6f8fb0;
-  font-size:13px;
-  margin-bottom:8px;
-}
-
-.reply-form{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.reply-form input,
-.reply-form textarea{
-  font-family:'DotGothic16',sans-serif;
-  border:2px solid #2264a8;
-  padding:10px;
-  background:#fff;
-  color:#1f3f5f;
-}
-
-.reply-form textarea{
-  min-height:120px;
-  resize:vertical;
-}
-
-.reply-form button{
-  align-self:flex-start;
-}
-
-.reply-status{
-  margin-top:18px;
-  padding:12px;
-  border:2px dashed #62b7dc;
-  background:#fff;
-  color:#2264a8;
-  white-space:pre-wrap;
-}
-
 /*==============================
-404 MEMORY CYBER THEME
+404 MEMORY CYBER REPLY THEME
 ==============================*/
 
 :root{
-
---neon:#78E8FF;
---light:#B8F5FF;
---border:#6EDBFF;
---bg:#141926;
---bg2:#1A2030;
---text:#EAFDFF;
-
+  --neon:#78E8FF;
+  --light:#B8F5FF;
+  --border:#6EDBFF;
+  --cyber-bg:#141926;
+  --cyber-bg2:#1A2030;
+  --cyber-text:#EAFDFF;
 }
-
-/* 外枠 */
 
 .cyber-reply-box{
-
-margin-top:40px;
-padding:25px;
-
-background:var(--bg);
-
-border:2px solid var(--border);
-
-clip-path:polygon(
-3% 0,
-95% 0,
-100% 8%,
-100% 92%,
-96% 100%,
-4% 100%,
-0 92%,
-0 10%
-);
-
-box-shadow:
-0 0 12px rgba(120,232,255,.35);
-
+  width:100%;
+  box-sizing:border-box;
+  margin-top:34px;
+  padding:24px;
+  background:var(--cyber-bg);
+  border:2px solid var(--border);
+  clip-path:polygon(3% 0,95% 0,100% 8%,100% 92%,96% 100%,4% 100%,0 92%,0 10%);
+  box-shadow:0 0 12px rgba(120,232,255,.35);
+  color:var(--cyber-text);
+  overflow:hidden;
 }
-
-
-/* 見出し */
 
 .cyber-header{
-
-display:inline-block;
-
-padding:6px 18px;
-
-font-size:14px;
-
-font-weight:bold;
-
-letter-spacing:2px;
-
-color:var(--neon);
-
-margin-bottom:25px;
-
+  display:inline-block;
+  padding:6px 18px;
+  font-size:14px;
+  font-weight:bold;
+  letter-spacing:2px;
+  color:var(--neon);
+  margin-bottom:22px;
 }
 
-
-/* コメント一覧 */
-
-.reply-list{
-
-display:flex;
-
-flex-direction:column;
-
-gap:22px;
-
-margin-bottom:25px;
-
+.cyber-reply-box .reply-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  margin-bottom:22px;
 }
 
-
-/* コメントカード */
-
-.reply-card{
-
-background:linear-gradient(
-135deg,
-#171C2B,
-#111522
-);
-
-border:2px solid var(--border);
-
-padding:18px 24px;
-
-color:white;
-
-position:relative;
-
-clip-path:polygon(
-4% 0,
-82% 0,
-88% 8%,
-100% 8%,
-100% 84%,
-93% 100%,
-16% 100%,
-0 88%,
-0 12%
-);
-
-transition:.25s;
-
+.cyber-reply-box .reply-card{
+  width:100%;
+  box-sizing:border-box;
+  background:linear-gradient(135deg,#171C2B,#111522);
+  border:2px solid var(--border);
+  padding:18px 22px;
+  color:var(--cyber-text);
+  position:relative;
+  clip-path:polygon(4% 0,82% 0,88% 8%,100% 8%,100% 84%,93% 100%,16% 100%,0 88%,0 12%);
+  transition:.25s;
 }
 
-
-.reply-card:hover{
-
-transform:translateX(6px);
-
-box-shadow:
-0 0 18px rgba(120,232,255,.55);
-
+.cyber-reply-box .reply-card:hover{
+  transform:translateX(4px);
+  box-shadow:0 0 18px rgba(120,232,255,.55);
 }
 
-
-/* 上の水色バー */
-
-.reply-card::before{
-
-content:"";
-
-position:absolute;
-
-top:0;
-
-left:0;
-
-height:12px;
-
-width:62%;
-
-background:linear-gradient(
-90deg,
-#9AF6FF,
-#63DFFF
-);
-
-clip-path:polygon(
-0 0,
-88% 0,
-100% 100%,
-0 100%
-);
-
+.cyber-reply-box .reply-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  height:12px;
+  width:62%;
+  background:linear-gradient(90deg,#9AF6FF,#63DFFF);
+  clip-path:polygon(0 0,88% 0,100% 100%,0 100%);
 }
 
-
-/* 名前 */
-
-.reply-from{
-
-margin-top:8px;
-
-margin-bottom:12px;
-
-font-weight:bold;
-
-font-size:13px;
-
-color:#A9F4FF;
-
-letter-spacing:1px;
-
+.cyber-reply-box .reply-from{
+  margin:10px 0 12px;
+  font-weight:bold;
+  font-size:13px;
+  color:#A9F4FF;
+  letter-spacing:1px;
 }
 
-
-/* 本文 */
-
-.reply-message{
-
-line-height:1.8;
-
-color:white;
-
+.cyber-reply-box .reply-message{
+  margin:0;
+  line-height:1.8;
+  color:var(--cyber-text);
 }
 
-
-/* 入力フォーム */
-
-.reply-form{
-
-display:grid;
-
-grid-template-columns:240px 1fr 200px;
-
-gap:15px;
-
-align-items:stretch;
-
+.cyber-reply-box .reply-form{
+  display:grid;
+  grid-template-columns:minmax(120px,180px) minmax(0,1fr) minmax(120px,160px);
+  gap:12px;
+  align-items:stretch;
 }
 
-
-.reply-form input,
-.reply-form textarea{
-
-background:#121826;
-
-border:2px solid var(--border);
-
-color:white;
-
-padding:14px;
-
-font-family:'DotGothic16';
-
-outline:none;
-
+.cyber-reply-box .reply-form input,
+.cyber-reply-box .reply-form textarea{
+  min-width:0;
+  width:100%;
+  box-sizing:border-box;
+  background:#121826 !important;
+  border:2px solid var(--border) !important;
+  color:var(--cyber-text) !important;
+  padding:12px;
+  font-family:'DotGothic16',sans-serif;
+  outline:none;
 }
 
-
-.reply-form textarea{
-
-resize:vertical;
-
-min-height:100px;
-
+.cyber-reply-box .reply-form textarea{
+  resize:vertical;
+  min-height:96px;
 }
 
-
-.reply-form input:focus,
-.reply-form textarea:focus{
-
-box-shadow:
-0 0 12px rgba(120,232,255,.45);
-
+.cyber-reply-box .reply-form input:focus,
+.cyber-reply-box .reply-form textarea:focus{
+  box-shadow:0 0 12px rgba(120,232,255,.45);
 }
 
-
-/* ボタン */
-
-.reply-form button{
-
-background:linear-gradient(
-180deg,
-#B7F7FF,
-#73E5FF
-);
-
-color:#08212B;
-
-border:none;
-
-font-family:'DotGothic16';
-
-font-size:15px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.2s;
-
+.cyber-reply-box .reply-form button{
+  width:100%;
+  box-sizing:border-box;
+  align-self:stretch;
+  background:linear-gradient(180deg,#B7F7FF,#73E5FF) !important;
+  color:#08212B !important;
+  border:none !important;
+  padding:12px;
+  font-family:'DotGothic16',sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+  letter-spacing:1px;
+  box-shadow:none !important;
 }
 
-
-.reply-form button:hover{
-
-transform:translateY(-2px);
-
-box-shadow:
-0 0 18px rgba(120,232,255,.6);
-
+.cyber-reply-box .reply-form button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(120,232,255,.6) !important;
 }
 
-
-/* ステータス */
-
-.reply-status{
-
-margin-top:20px;
-
-padding:12px;
-
-border:1px dashed var(--border);
-
-background:#10141D;
-
-color:#9EF6FF;
-
-font-size:12px;
-
-white-space:pre-wrap;
-
+.cyber-reply-box .reply-status{
+  margin-top:18px;
+  padding:12px;
+  border:1px dashed var(--border);
+  background:#10141D;
+  color:#9EF6FF;
+  font-size:12px;
+  white-space:pre-wrap;
 }
 
 @media screen and (max-width:600px){
-  .cyber-reply-box{
-    padding:16px;
-    margin-top:28px;
-    clip-path:none;
-  }
-
-  .reply-form{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .reply-form input,
-  .reply-form textarea,
-  .reply-form button{
-    width:100%;
+  .letter-box{
+    width:calc(100vw - 24px);
+    max-width:none;
+    margin:24px auto;
     box-sizing:border-box;
   }
 
-  .reply-card{
-    clip-path:none;
+  .letter-content{
+    padding:14px;
+  }
+
+  .diary-entry{
+    padding:14px;
+    margin:22px 0;
+    box-sizing:border-box;
+  }
+
+  .cyber-reply-box{
     padding:16px;
+    margin-top:26px;
+    clip-path:none;
   }
 
   .cyber-header{
     font-size:12px;
-    padding:6px 12px;
+    padding:6px 10px;
+    margin-bottom:14px;
+  }
+
+  .cyber-reply-box .reply-form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .cyber-reply-box .reply-form input,
+  .cyber-reply-box .reply-form textarea,
+  .cyber-reply-box .reply-form button{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+
+  .cyber-reply-box .reply-card{
+    clip-path:none;
+    padding:16px;
+  }
+
+  .cyber-reply-box .reply-card::before{
+    height:8px;
+    width:70%;
   }
 }

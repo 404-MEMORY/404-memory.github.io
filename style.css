@@ -831,3 +831,296 @@ input{
   white-space:pre-wrap;
 }
 
+/*==============================
+404 MEMORY CYBER THEME
+==============================*/
+
+:root{
+
+--neon:#78E8FF;
+--light:#B8F5FF;
+--border:#6EDBFF;
+--bg:#141926;
+--bg2:#1A2030;
+--text:#EAFDFF;
+
+}
+
+/* 外枠 */
+
+.cyber-reply-box{
+
+margin-top:40px;
+padding:25px;
+
+background:var(--bg);
+
+border:2px solid var(--border);
+
+clip-path:polygon(
+3% 0,
+95% 0,
+100% 8%,
+100% 92%,
+96% 100%,
+4% 100%,
+0 92%,
+0 10%
+);
+
+box-shadow:
+0 0 12px rgba(120,232,255,.35);
+
+}
+
+
+/* 見出し */
+
+.cyber-header{
+
+display:inline-block;
+
+padding:6px 18px;
+
+font-size:14px;
+
+font-weight:bold;
+
+letter-spacing:2px;
+
+color:var(--neon);
+
+margin-bottom:25px;
+
+}
+
+
+/* コメント一覧 */
+
+.reply-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+margin-bottom:25px;
+
+}
+
+
+/* コメントカード */
+
+.reply-card{
+
+background:linear-gradient(
+135deg,
+#171C2B,
+#111522
+);
+
+border:2px solid var(--border);
+
+padding:18px 24px;
+
+color:white;
+
+position:relative;
+
+clip-path:polygon(
+4% 0,
+82% 0,
+88% 8%,
+100% 8%,
+100% 84%,
+93% 100%,
+16% 100%,
+0 88%,
+0 12%
+);
+
+transition:.25s;
+
+}
+
+
+.reply-card:hover{
+
+transform:translateX(6px);
+
+box-shadow:
+0 0 18px rgba(120,232,255,.55);
+
+}
+
+
+/* 上の水色バー */
+
+.reply-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+height:12px;
+
+width:62%;
+
+background:linear-gradient(
+90deg,
+#9AF6FF,
+#63DFFF
+);
+
+clip-path:polygon(
+0 0,
+88% 0,
+100% 100%,
+0 100%
+);
+
+}
+
+
+/* 名前 */
+
+.reply-from{
+
+margin-top:8px;
+
+margin-bottom:12px;
+
+font-weight:bold;
+
+font-size:13px;
+
+color:#A9F4FF;
+
+letter-spacing:1px;
+
+}
+
+
+/* 本文 */
+
+.reply-message{
+
+line-height:1.8;
+
+color:white;
+
+}
+
+
+/* 入力フォーム */
+
+.reply-form{
+
+display:grid;
+
+grid-template-columns:240px 1fr 200px;
+
+gap:15px;
+
+align-items:stretch;
+
+}
+
+
+.reply-form input,
+.reply-form textarea{
+
+background:#121826;
+
+border:2px solid var(--border);
+
+color:white;
+
+padding:14px;
+
+font-family:'DotGothic16';
+
+outline:none;
+
+}
+
+
+.reply-form textarea{
+
+resize:vertical;
+
+min-height:100px;
+
+}
+
+
+.reply-form input:focus,
+.reply-form textarea:focus{
+
+box-shadow:
+0 0 12px rgba(120,232,255,.45);
+
+}
+
+
+/* ボタン */
+
+.reply-form button{
+
+background:linear-gradient(
+180deg,
+#B7F7FF,
+#73E5FF
+);
+
+color:#08212B;
+
+border:none;
+
+font-family:'DotGothic16';
+
+font-size:15px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+
+.reply-form button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 0 18px rgba(120,232,255,.6);
+
+}
+
+
+/* ステータス */
+
+.reply-status{
+
+margin-top:20px;
+
+padding:12px;
+
+border:1px dashed var(--border);
+
+background:#10141D;
+
+color:#9EF6FF;
+
+font-size:12px;
+
+white-space:pre-wrap;
+
+}

@@ -964,3 +964,54 @@ input{
     width:70%;
   }
 }
+
+/* ====== サイバー風デザイン ====== */
+
+.letter-page{
+  background:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+    #0b0f18;
+  background-size:40px 40px;
+  color:#e8ffff;
+}
+
+.letter-box{
+  background:#131827;
+  border:2px solid #58e8ff;
+  box-shadow:0 0 30px rgba(88,232,255,.2);
+}
+
+.window-title{
+  background:linear-gradient(90deg,#54dfff,#18b8ff);
+  color:#00141b;
+}
+
+.letter-content{
+  background:#141b29;
+  color:#dffcff;
+}
+
+.diary-date{
+  color:#8af4ff;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+.diary-to{
+  color:#67dfff;
+}
+
+.separator{
+  border-top:1px dashed #4fdfff;
+  opacity:.7;
+}
+
+a{
+  color:#74e7ff;
+  text-decoration:none;
+}
+
+a:hover{
+  text-shadow:0 0 10px #74e7ff;
+}

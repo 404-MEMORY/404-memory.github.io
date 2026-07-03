@@ -830,3 +830,18 @@ input{
   color:#2264a8;
   white-space:pre-wrap;
 }
+
+<div class="cyber-reply-box">
+  <p class="cyber-section-title">▲ REPLY SIGNAL</p>
+
+  <div class="reply-list"></div>
+
+  <form class="reply-form cyber-reply-form">
+    <input type="text" name="name" placeholder="CALL SIGN（リスナー名）">
+    <textarea name="message" required placeholder="ここに返信を書く"></textarea>
+    <button type="submit">▶ SEND REPLY</button>
+  </form>
+
+  <pre class="reply-status">Waiting for reply...</pre>
+</div>
+

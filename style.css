@@ -1,15 +1,21 @@
-  body,
-    .letter-page{
-      margin:0;
-      min-height:100vh;
-      background:
-        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
-        #0b0f18;
-      background-size:40px 40px;
-      color:#e8ffff;
-      font-family:'DotGothic16',sans-serif;
-    }
+body,
+.letter-page{
+
+  margin:0;
+  min-height:100vh;
+
+  background:
+    linear-gradient(rgba(150,220,255,.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(150,220,255,.25) 1px, transparent 1px),
+    linear-gradient(#f9fdff,#eef8ff);
+
+  background-size:32px 32px;
+
+  color:#1f3f5f;
+
+  font-family:'DotGothic16',sans-serif;
+
+}
 
     /* 全体レイアウト */
 

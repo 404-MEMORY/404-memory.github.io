@@ -970,3 +970,6 @@ body,
         width:70%;
       }
     }
+.signal-title{
+    display:none;
+}

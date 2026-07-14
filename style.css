@@ -974,3 +974,35 @@ body,
 .signal-title{
     display:none;
 }
+
+/*==========================
+   Hidden Secret Text
+==========================*/
+
+.secret-copy{
+
+    color:transparent;
+
+    background:#071120;
+
+    user-select:text;
+
+    transition:.2s;
+
+}
+
+.secret-copy::selection{
+
+    color:#8cf7ff;
+
+    background:#00394b;
+
+}
+
+.secret-copy::-moz-selection{
+
+    color:#8cf7ff;
+
+    background:#00394b;
+
+}

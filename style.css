@@ -979,26 +979,6 @@ body,
    Hidden Secret Text
 ==========================*/
 
-.corrupted-note{
-
-    margin:18px 0 8px;
-
-    color:#6cdfff;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    opacity:.8;
-
-}
-
-.secret-copy{
-
-    /*==========================
-   Hidden Secret Text
-==========================*/
-
 .secret-copy{
 
     color:transparent;

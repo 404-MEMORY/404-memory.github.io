@@ -979,30 +979,60 @@ body,
    Hidden Secret Text
 ==========================*/
 
+.corrupted-note{
+
+    margin:18px 0 8px;
+
+    color:#6cdfff;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    opacity:.8;
+
+}
+
 .secret-copy{
 
-    color:transparent;
+    display:block;
+
+    margin-top:8px;
 
     background:#071120;
 
+    color:transparent;
+
     user-select:text;
 
-    transition:.2s;
+    font-family:monospace;
+
+}
+
+.secret-copy::before{
+
+    content:"██████████████████████████";
+
+    display:block;
+
+    color:#3c4c58;
+
+    letter-spacing:2px;
 
 }
 
 .secret-copy::selection{
 
-    color:#8cf7ff;
+    background:#004b63;
 
-    background:#00394b;
+    color:#8cf7ff;
 
 }
 
 .secret-copy::-moz-selection{
 
-    color:#8cf7ff;
+    background:#004b63;
 
-    background:#00394b;
+    color:#8cf7ff;
 
 }

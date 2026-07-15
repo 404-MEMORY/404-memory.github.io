@@ -995,44 +995,34 @@ body,
 
 .secret-copy{
 
-    display:block;
+    /*==========================
+   Hidden Secret Text
+==========================*/
 
-    margin-top:8px;
-
-    background:#071120;
+.secret-copy{
 
     color:transparent;
 
+    background:#071120;
+
     user-select:text;
 
-    font-family:monospace;
-
-}
-
-.secret-copy::before{
-
-    content:"██████████████████████████";
-
-    display:block;
-
-    color:#3c4c58;
-
-    letter-spacing:2px;
+    transition:.2s;
 
 }
 
 .secret-copy::selection{
 
-    background:#004b63;
-
     color:#8cf7ff;
+
+    background:#00394b;
 
 }
 
 .secret-copy::-moz-selection{
 
-    background:#004b63;
-
     color:#8cf7ff;
+
+    background:#00394b;
 
 }

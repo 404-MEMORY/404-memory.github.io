@@ -48,7 +48,231 @@ Connections are currently being monitored.
 <br>
 
 <a href="index.html">← HOME</a>
+<script>
+const SUPABASE_URL = "あなたのSupabase Project URL";
+const SUPABASE_KEY = "あなたのPublishable Keyまたはanon key";
 
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+const node610 = document.getElementById("node610");
+const node928 = document.getElementById("node928");
+const secureLink = document.getElementById("secureLink");
+
+const lastSignal = document.getElementById("lastSignal");
+const lastSender = document.getElementById("lastSender");
+const receivedPanel = document.getElementById("receivedPanel");
+const receivedStatus = document.getElementById("receivedStatus");
+
+const connectionLog = document.getElementById("connectionLog");
+const signalCount = document.getElementById("signalCount");
+
+let currentSignalCount = 0;
+
+function normalizeSender(name){
+  const value = String(name ?? "").trim().toLowerCase();
+
+  if(
+    value === "928" ||
+    value.includes("葛葉") ||
+    value.includes("kuzuha")
+  ){
+    return "928";
+  }
+
+  return "610";
+}
+
+function escapeHtml(value){
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function formatSignalTime(value){
+  const date = value ? new Date(value) : new Date();
+
+  return new Intl.DateTimeFormat("ja-JP", {
+    year:"numeric",
+    month:"2-digit",
+    day:"2-digit",
+    hour:"2-digit",
+    minute:"2-digit",
+    second:"2-digit"
+  }).format(date);
+}
+
+function resetAnimation(element, className){
+  element.classList.remove(className);
+  void element.offsetWidth;
+  element.classList.add(className);
+}
+
+function activateRadar(sender){
+  const node = sender === "928" ? node928 : node610;
+
+  resetAnimation(node, "signal-active");
+
+  secureLink.classList.remove(
+    "signal-transfer",
+    "from-928",
+    "from-610"
+  );
+
+  void secureLink.offsetWidth;
+
+  secureLink.classList.add(
+    "signal-transfer",
+    sender === "928" ? "from-928" : "from-610"
+  );
+
+  window.setTimeout(() => {
+    node.classList.remove("signal-active");
+
+    secureLink.classList.remove(
+      "signal-transfer",
+      "from-928",
+      "from-610"
+    );
+  }, 3500);
+}
+
+function updateStatus(sender){
+  lastSignal.textContent = "NOW";
+
+  lastSender.textContent = sender;
+  lastSender.className =
+    sender === "928" ? "sender-928" : "sender-610";
+
+  receivedPanel.classList.remove("from-928", "from-610");
+  receivedPanel.classList.add(
+    sender === "928" ? "from-928" : "from-610"
+  );
+
+  receivedStatus.textContent =
+    `SIGNAL RECEIVED / FROM : ${sender}`;
+
+  window.setTimeout(() => {
+    receivedStatus.textContent = "LINK STABLE.";
+  }, 4500);
+}
+
+function addSignalToLog(comment, prepend = true){
+  const sender = normalizeSender(comment.name);
+  const message = escapeHtml(comment.message || "");
+  const time = formatSignalTime(comment.created_at);
+
+  const empty = connectionLog.querySelector(".empty-log");
+
+  if(empty){
+    empty.remove();
+  }
+
+  const article = document.createElement("article");
+
+  article.className =
+    `connection-message ${
+      sender === "928" ? "from-928" : "from-610"
+    }`;
+
+  article.innerHTML = `
+    <div class="message-meta">
+      <span class="message-name">FROM : ${sender}</span>
+      <time class="message-time">${escapeHtml(time)}</time>
+    </div>
+
+    <p class="message-body">${message.replaceAll("\n", "<br>")}</p>
+  `;
+
+  if(prepend){
+    connectionLog.prepend(article);
+  }else{
+    connectionLog.append(article);
+  }
+
+  currentSignalCount += 1;
+  signalCount.textContent =
+    `${currentSignalCount} SIGNAL${currentSignalCount === 1 ? "" : "S"}`;
+
+  while(connectionLog.children.length > 20){
+    connectionLog.lastElementChild.remove();
+  }
+}
+
+async function loadRecentSignals(){
+  const { data, error } = await supabaseClient
+    .from("comments")
+    .select("id, page, name, message, created_at")
+    .order("created_at", { ascending:false })
+    .limit(20);
+
+  if(error){
+    console.error("SIGNAL LOG LOAD ERROR:", error);
+    receivedStatus.textContent = "SIGNAL LOG LOAD ERROR.";
+    return;
+  }
+
+  connectionLog.innerHTML = "";
+  currentSignalCount = 0;
+
+  [...data].reverse().forEach(comment => {
+    addSignalToLog(comment, true);
+  });
+
+  if(data.length === 0){
+    connectionLog.innerHTML =
+      '<p class="empty-log">NO SIGNAL DATA.</p>';
+  }
+
+  if(data[0]){
+    const sender = normalizeSender(data[0].name);
+
+    lastSignal.textContent =
+      formatSignalTime(data[0].created_at);
+
+    lastSender.textContent = sender;
+    lastSender.className =
+      sender === "928" ? "sender-928" : "sender-610";
+  }
+}
+
+function subscribeToSignals(){
+  supabaseClient
+    .channel("connection-comments-monitor")
+    .on(
+      "postgres_changes",
+      {
+        event:"INSERT",
+        schema:"public",
+        table:"comments"
+      },
+      payload => {
+        const comment = payload.new;
+        const sender = normalizeSender(comment.name);
+
+        activateRadar(sender);
+        updateStatus(sender);
+        addSignalToLog(comment, true);
+      }
+    )
+    .subscribe(status => {
+      console.log("REALTIME STATUS:", status);
+
+      if(status === "SUBSCRIBED"){
+        receivedStatus.textContent =
+          "REALTIME MONITOR ACTIVE.";
+      }
+    });
+}
+
+loadRecentSignals();
+subscribeToSignals();
+</script>
 </body>
 </html>
 <section class="connection-terminal">

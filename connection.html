@@ -51,3 +51,80 @@ Connections are currently being monitored.
 
 </body>
 </html>
+<section class="connection-terminal">
+
+  <div class="connection-heading">
+    <div>
+      <p class="terminal-kicker">404-MEMORY / CONNECTION RADAR SYSTEM</p>
+      <h2>CONNECTION MAP</h2>
+    </div>
+
+    <p class="live-indicator">
+      <span></span>
+      REALTIME TRACKING
+    </p>
+  </div>
+
+  <div class="radar-stage" id="radarStage">
+
+    <div class="radar-grid"></div>
+    <div class="radar-sweep"></div>
+
+    <div class="signal-node node-610" id="node610">
+      <div class="signal-ripple ripple-610"></div>
+      <div class="node-core">610</div>
+      <p>SUBJECT</p>
+    </div>
+
+    <div class="secure-link" id="secureLink">
+      <span class="link-pulse"></span>
+      <p>SECURE LINK ESTABLISHED</p>
+    </div>
+
+    <div class="signal-node node-928" id="node928">
+      <div class="signal-ripple ripple-928"></div>
+      <div class="node-core">928</div>
+      <p>COOPERATION UNIT</p>
+    </div>
+
+  </div>
+
+  <div class="connection-data">
+    <div>
+      <span>STATUS</span>
+      <strong id="connectionStatus">CONNECTED</strong>
+    </div>
+
+    <div>
+      <span>SYNC</span>
+      <strong>99.8%</strong>
+    </div>
+
+    <div>
+      <span>LAST SIGNAL</span>
+      <strong id="lastSignal">STANDBY</strong>
+    </div>
+
+    <div>
+      <span>FROM</span>
+      <strong id="lastSender">---</strong>
+    </div>
+  </div>
+
+  <div class="received-panel" id="receivedPanel">
+    <p class="received-label">SIGNAL MONITOR</p>
+    <p id="receivedStatus">WAITING FOR SIGNAL...</p>
+  </div>
+
+  <div class="signal-log-section">
+    <div class="signal-log-heading">
+      <h3>SIGNAL LOG</h3>
+      <span id="signalCount">0 SIGNALS</span>
+    </div>
+
+    <div class="connection-log" id="connectionLog">
+      <p class="empty-log">NO SIGNAL DATA.</p>
+    </div>
+  </div>
+
+</section>
